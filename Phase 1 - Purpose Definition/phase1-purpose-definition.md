@@ -45,7 +45,7 @@ Anna is comparing municipalities near Trento and Rovereto. She explores the know
 - Past education KG repository (ETG datasets): https://github.com/samuelebortolotti/Education-Trentino/tree/main/Datasets/Data%20Integration/ETG
 
 ### Informal resources
-- Comune di Trento - student sites download: https://www.comune.trento.it/Areemtematiche/Cartografia/Download/Studentati
+- Comune di Trento - student sites download: https://www.comune.trento.it/Aree-tematiche/Cartografia/Download/Studentati
 - Open Data Trentino - Digital university
 
 ### Schema references
