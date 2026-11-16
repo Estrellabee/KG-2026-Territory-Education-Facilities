@@ -47,7 +47,7 @@ This phase formalizes the vocabulary defined in Phase 2 into a machine-readable 
 - `ownershipType` is restricted to the enumerated values public, religious, lay.
 - Coordinates, population, courses, and staff persons are not modelled in this KG.
 
-- ## Mapping Design (CSV to ontology)
+## Mapping Design (CSV to ontology)
 | Source table | Source column | Ontology class / property |
 |---|---|---|
 | educational_institutions.csv | institute_name | EducationalInstitution.name |
