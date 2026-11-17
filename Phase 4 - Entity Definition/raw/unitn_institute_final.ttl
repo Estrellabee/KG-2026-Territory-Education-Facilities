@@ -1,0 +1,25 @@
+_:etype_Institute_Contact_Information_GID-3000411_0bcc5e7eacfe4fdebe6c9724a0d7bb1eb69681f5_N178009_f41efb3e621e0cc0e059e910adbf0860ddfd8d3b_N178013 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.org/StructuredValue> .
+<http://localhost:8080/source/Università%20degli%20studi%20di%20Trento> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Thing> .
+<http://localhost:8080/source/Trento> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Thing> .
+<http://localhost:8080/source/Università%20degli%20studi%20di%20Trento> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Agent> .
+_:etype_Institute_Contact_Information_GID-3000411_0bcc5e7eacfe4fdebe6c9724a0d7bb1eb69681f5_N178009_f41efb3e621e0cc0e059e910adbf0860ddfd8d3b_N178013 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Thing> .
+<http://localhost:8080/source/Università%20degli%20studi%20di%20Trento> <http://knowdive.disi.unitn.it/etype#has_Type_GID-31834> "University" .
+<http://localhost:8080/source/Trento> <http://knowdive.disi.unitn.it/etype#contains_GID-113311_Type-300037> <http://localhost:8080/source/Università%20degli%20studi%20di%20Trento> .
+_:etype_Institute_Contact_Information_GID-3000411_0bcc5e7eacfe4fdebe6c9724a0d7bb1eb69681f5_N178009_f41efb3e621e0cc0e059e910adbf0860ddfd8d3b_N178013 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://knowdive.disi.unitn.it/etype#Institute_Contact_Information_GID-300041> .
+<http://localhost:8080/source/Università%20degli%20studi%20di%20Trento> <http://knowdive.disi.unitn.it/etype#has_Website_GID-34126_Type-45425> "http://www.unitn.it" .
+<http://localhost:8080/source/Trento> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://vivoweb.org/ontology/core#SubnationalRegion> .
+<http://localhost:8080/source/Università%20degli%20studi%20di%20Trento> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Organization> .
+<http://localhost:8080/source/Università%20degli%20studi%20di%20Trento> <http://knowdive.disi.unitn.it/etype#has_Name_GID-2_Type-300037> "Università degli studi di Trento" .
+<http://localhost:8080/source/Trento> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://vivoweb.org/ontology/core#GeographicLocation> .
+<http://localhost:8080/source/Università%20degli%20studi%20di%20Trento> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://knowdive.disi.unitn.it/etype#Institute_GID-45425> .
+_:etype_Institute_Contact_Information_GID-3000411_0bcc5e7eacfe4fdebe6c9724a0d7bb1eb69681f5_N178009_f41efb3e621e0cc0e059e910adbf0860ddfd8d3b_N178013 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.org/ContactPoint> .
+<http://localhost:8080/source/Trento> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://vivoweb.org/ontology/core#Location> .
+<http://localhost:8080/source/Trento> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://knowdive.disi.unitn.it/etype#Subregional_Academic_Division_GID-300037> .
+_:etype_Institute_Contact_Information_GID-3000411_0bcc5e7eacfe4fdebe6c9724a0d7bb1eb69681f5_N178009_f41efb3e621e0cc0e059e910adbf0860ddfd8d3b_N178013 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.org/Intangible> .
+_:etype_Institute_Contact_Information_GID-3000411_0bcc5e7eacfe4fdebe6c9724a0d7bb1eb69681f5_N178009_f41efb3e621e0cc0e059e910adbf0860ddfd8d3b_N178013 <https://schema.org/telephone_GID-34494> "0461 281111" .
+<http://localhost:8080/source/Trento> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.obolibrary.org/obo/BFO_0000006/Spatial_Region> .
+<http://localhost:8080/source/Trento> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://vivoweb.org/ontology/core#GeographicRegion> .
+<http://localhost:8080/source/Università%20degli%20studi%20di%20Trento> <http://knowdive.disi.unitn.it/etype#has_Address_GID-45803> "Via Calepina, 14" .
+<http://localhost:8080/source/Università%20degli%20studi%20di%20Trento> <http://knowdive.disi.unitn.it/etype#reachable_by_GID-300002_Type-45425> _:etype_Institute_Contact_Information_GID-3000411_0bcc5e7eacfe4fdebe6c9724a0d7bb1eb69681f5_N178009_f41efb3e621e0cc0e059e910adbf0860ddfd8d3b_N178013 .
+_:etype_Institute_Contact_Information_GID-3000411_0bcc5e7eacfe4fdebe6c9724a0d7bb1eb69681f5_N178009_f41efb3e621e0cc0e059e910adbf0860ddfd8d3b_N178013 <http://knowdive.disi.unitn.it/etype#has_Institute_Mail_GID-300035_Type-300041> "ateneo@unitn.it" .
+
