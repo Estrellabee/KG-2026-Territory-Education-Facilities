@@ -119,10 +119,13 @@ NaturalLandmark            -> ktlo:natural, ktlo:openstreetmap_place
 `owl:imports` points to the repository, so the fragments must be present in the repo:
 
 ```
-Fragments/KTLO-KG.owl
-Fragments/LTLO-KG.owl
-Fragments/full-schema-org.owl
+fragments/KTLO-KG.owl
+fragments/LTLO-KG.owl
+fragments/full-schema-org.owl
 ```
+
+The folder name is lowercase in the repository and the `owl:imports` IRIs match it
+exactly (raw.githubusercontent.com is case-sensitive).
 
 They are redistributed here unchanged, only so that the ontology resolves without
 requiring access to the course Drive folder.

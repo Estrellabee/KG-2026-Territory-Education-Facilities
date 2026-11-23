@@ -31,9 +31,9 @@ no counterpart in the supplied fragments (geometry relations, ownership, school 
 per-municipality school counts) are kept in the project namespace and documented as
 project extensions.""" ;
     dcterms:source "KTLO-KG.owl, LTLO-KG.owl, full-schema-org.owl (KG Composable Fragments, distributed by the course, 2025-10-17)" ;
-    owl:imports <https://raw.githubusercontent.com/Estrellabee/KG-2026-Territory-Education-Facilities/main/Fragments/KTLO-KG.owl> ;
-    owl:imports <https://raw.githubusercontent.com/Estrellabee/KG-2026-Territory-Education-Facilities/main/Fragments/LTLO-KG.owl> ;
-    owl:imports <https://raw.githubusercontent.com/Estrellabee/KG-2026-Territory-Education-Facilities/main/Fragments/full-schema-org.owl> .
+    owl:imports <https://raw.githubusercontent.com/Estrellabee/KG-2026-Territory-Education-Facilities/main/fragments/KTLO-KG.owl> ;
+    owl:imports <https://raw.githubusercontent.com/Estrellabee/KG-2026-Territory-Education-Facilities/main/fragments/LTLO-KG.owl> ;
+    owl:imports <https://raw.githubusercontent.com/Estrellabee/KG-2026-Territory-Education-Facilities/main/fragments/full-schema-org.owl> .
 
 #################################################################
 # Classes
