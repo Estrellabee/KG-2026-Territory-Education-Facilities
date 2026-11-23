@@ -1,0 +1,182 @@
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix edu:     <http://kg2026.unitn.it/ontology/education#> .
+@prefix schema:  <https://schema.org/> .
+@prefix vivo:    <http://vivoweb.org/ontology/core#> .
+@prefix ktlo:    <http://www.semanticweb.org/lixiaoyue/ontologies/2023/2/untitled-ontology-26#> .
+
+#################################################################
+# Ontology header
+# This is the domain TLO of project #6, aligned to the upper-level
+# ontological resources provided by the course (KTLO / LTLO and the
+# schema.org reference fragment).
+#################################################################
+
+edu: a owl:Ontology ;
+    rdfs:label "Territory and Education Facilities Ontology (aligned)" ;
+    rdfs:comment """KG 2026 project #6: educational institutions and municipalities in the Trentino area.
+
+This file is the Application Context Level (TLO/ETG) of the project. It extends the
+inception ontology of Phase 3 with explicit alignment axioms to the Knowledge Teleology
+(KTLO) and Language Teleology (LTLO) supplied by the course, and to the schema.org
+reference fragment.
+
+The alignment is deliberately limited to what the project data can support: classes are
+declared as subclasses of the corresponding KTLO classes, and only those properties whose
+KTLO counterpart has a compatible type are declared as subproperties. Properties that have
+no counterpart in the supplied fragments (geometry relations, ownership, school level,
+per-municipality school counts) are kept in the project namespace and documented as
+project extensions.""" ;
+    dcterms:source "KTLO-KG.owl, LTLO-KG.owl, full-schema-org.owl (KG Composable Fragments, distributed by the course, 2025-10-17)" ;
+    owl:imports <https://raw.githubusercontent.com/Estrellabee/KG-2026-Territory-Education-Facilities/main/Fragments/KTLO-KG.owl> ;
+    owl:imports <https://raw.githubusercontent.com/Estrellabee/KG-2026-Territory-Education-Facilities/main/Fragments/LTLO-KG.owl> ;
+    owl:imports <https://raw.githubusercontent.com/Estrellabee/KG-2026-Territory-Education-Facilities/main/Fragments/full-schema-org.owl> .
+
+#################################################################
+# Classes
+#################################################################
+
+edu:Municipality a owl:Class ;
+    rdfs:label "Municipality" ;
+    rdfs:subClassOf schema:AdministrativeArea ;
+    rdfs:subClassOf ktlo:places ;
+    rdfs:seeAlso vivo:GeographicLocation ;
+    rdfs:comment "A comune of the Autonomous Province of Trento. Aligned to ktlo:places, the settlement branch of the KTLO, because a municipality is a populated place; aligned to schema:AdministrativeArea because it is also an administrative unit." .
+
+edu:EducationalInstitution a owl:Class ;
+    rdfs:label "Educational Institution" ;
+    rdfs:subClassOf schema:EducationalOrganization ;
+    rdfs:subClassOf ktlo:school ;
+    rdfs:seeAlso vivo:Organization ;
+    rdfs:comment "Aligned to ktlo:school. In the KTLO the path is ktlo:school < ktlo:education < ktlo:public < ktlo:pois < ktlo:openstreetmap_place." .
+
+edu:Kindergarten a owl:Class ;
+    rdfs:label "Kindergarten" ;
+    rdfs:subClassOf edu:EducationalInstitution ;
+    rdfs:subClassOf ktlo:kindergarten ;
+    rdfs:comment "Aligned to ktlo:kindergarten, which in the KTLO is a sibling of ktlo:school under ktlo:education." .
+
+edu:PrimarySchool a owl:Class ;
+    rdfs:label "Primary School" ;
+    rdfs:subClassOf edu:EducationalInstitution ;
+    rdfs:comment "No dedicated KTLO class exists for primary schools; the alignment is inherited from edu:EducationalInstitution (subclass of ktlo:school)." .
+
+edu:SecondarySchool a owl:Class ;
+    rdfs:label "Secondary School" ;
+    rdfs:subClassOf edu:EducationalInstitution ;
+    rdfs:comment "No dedicated KTLO class exists for secondary schools; the alignment is inherited from edu:EducationalInstitution (subclass of ktlo:school)." .
+
+edu:HigherEducationInstitution a owl:Class ;
+    rdfs:label "Higher Education Institution" ;
+    rdfs:subClassOf edu:EducationalInstitution , schema:CollegeOrUniversity ;
+    rdfs:subClassOf ktlo:university ;
+    rdfs:comment "Aligned to ktlo:university, a sibling of ktlo:school and ktlo:kindergarten under ktlo:education." .
+
+edu:GeoFeature a owl:Class ;
+    rdfs:label "Geographic Feature" ;
+    rdfs:subClassOf ktlo:openstreetmap_place ;
+    rdfs:comment "Introduction class for the geographical branch. Aligned to the root of the KTLO class tree so that every geographical feature of the project stays inside the supplied ontology." .
+
+edu:NaturalLandmark a owl:Class ;
+    rdfs:label "Natural Landmark" ;
+    rdfs:subClassOf edu:GeoFeature ;
+    rdfs:subClassOf ktlo:natural ;
+    rdfs:comment "Aligned to ktlo:natural (lakes, peaks, glaciers, ...). Instantiated as a class only: no landmark coordinates are available in the supplied datasets, so CQ2 cannot be answered with data." .
+
+#################################################################
+# Object properties
+#################################################################
+
+edu:locatedIn a owl:ObjectProperty ;
+    rdfs:label "located in" ;
+    rdfs:domain edu:EducationalInstitution ;
+    rdfs:range edu:Municipality ;
+    rdfs:subPropertyOf schema:containedInPlace ;
+    rdfs:comment "Project extension, aligned to schema:containedInPlace. The KTLO has no containment relation: it is a taxonomy of place types, so this relation cannot be inherited from it." .
+
+edu:near a owl:ObjectProperty ;
+    rdfs:label "near" ;
+    rdfs:domain edu:EducationalInstitution ;
+    rdfs:range edu:GeoFeature ;
+    rdfs:comment "Conceptual relation only; no landmark or coordinate data is available in the current sources. No equivalent exists in KTLO, LTLO or schema.org fragments, therefore it is declared as a project extension." .
+
+edu:hasEducationalInstitution a owl:ObjectProperty ;
+    rdfs:label "has educational institution" ;
+    rdfs:domain edu:Municipality ;
+    rdfs:range edu:EducationalInstitution ;
+    owl:inverseOf edu:locatedIn ;
+    rdfs:comment "Project extension (inverse of edu:locatedIn); kept for the municipality-centric competency questions." .
+
+#################################################################
+# Data properties
+#################################################################
+
+edu:name a owl:DatatypeProperty ;
+    rdfs:label "name" ;
+    rdfs:domain edu:EducationalInstitution , edu:Municipality , edu:GeoFeature ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf ktlo:name ;
+    rdfs:comment "Aligned to ktlo:name, the property the KTLO itself uses for every openstreetmap_place. Because all project classes are declared below ktlo:openstreetmap_place, the KTLO domain restriction is satisfied." .
+
+edu:address a owl:DatatypeProperty ;
+    rdfs:label "address" ;
+    rdfs:domain edu:EducationalInstitution ;
+    rdfs:range xsd:string ;
+    rdfs:comment "Project extension. schema:address in the supplied fragment is declared as an object property (because schema.org allows both a text and a PostalAddress value), so it cannot be used as the super-property of a datatype property without breaking the logic. The correspondence is documented in the report instead." .
+
+edu:ownershipType a owl:DatatypeProperty ;
+    rdfs:label "ownership type" ;
+    rdfs:domain edu:EducationalInstitution ;
+    rdfs:range xsd:string ;
+    rdfs:comment "Project extension. Enumerated values: public, religious, lay (source values Pubblico / Religioso / Laico). No counterpart in KTLO or schema.org." .
+
+edu:schoolLevel a owl:DatatypeProperty ;
+    rdfs:label "school level" ;
+    rdfs:domain edu:EducationalInstitution ;
+    rdfs:range xsd:string ;
+    rdfs:comment "Project extension. Enumerated values: kindergarten, primary, secondary, higher. The KTLO encodes school level as classes (ktlo:kindergarten, ktlo:school, ktlo:university) rather than as a datatype property, so this property duplicates class membership for query convenience." .
+
+edu:istatCode a owl:DatatypeProperty ;
+    rdfs:label "ISTAT code" ;
+    rdfs:domain edu:Municipality ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf ktlo:code ;
+    rdfs:comment "Aligned to ktlo:code, the identifier property of ktlo:openstreetmap_place. The ISTAT code is the official identifier of a municipality." .
+
+edu:area a owl:DatatypeProperty ;
+    rdfs:label "area" ;
+    rdfs:domain edu:Municipality ;
+    rdfs:range xsd:decimal ;
+    rdfs:comment "Project extension (surface area in km2). schema:area exists in the supplied fragment but is declared as an object property, so no sub-property axiom is added." .
+
+#################################################################
+# Data properties: counts of schools per municipality
+# Source: number_scuole_*.csv (school year 2012/2013).
+#################################################################
+
+edu:kindergartenCount a owl:DatatypeProperty ;
+    rdfs:label "kindergarten count" ;
+    rdfs:domain edu:Municipality ;
+    rdfs:range xsd:integer ;
+    rdfs:comment "Number of kindergartens (scuole dell'infanzia) in the municipality, school year 2012/2013. Project extension: the KTLO only offers ktlo:population for places, which does not cover counts of facilities." .
+
+edu:primarySchoolCount a owl:DatatypeProperty ;
+    rdfs:label "primary school count" ;
+    rdfs:domain edu:Municipality ;
+    rdfs:range xsd:integer ;
+    rdfs:comment "Number of primary schools (scuole primarie) in the municipality, school year 2012/2013. Project extension." .
+
+edu:lowerSecondarySchoolCount a owl:DatatypeProperty ;
+    rdfs:label "lower secondary school count" ;
+    rdfs:domain edu:Municipality ;
+    rdfs:range xsd:integer ;
+    rdfs:comment "Number of lower secondary schools (scuole secondarie di primo grado) in the municipality, school year 2012/2013. Project extension." .
+
+edu:upperSecondarySchoolCount a owl:DatatypeProperty ;
+    rdfs:label "upper secondary school count" ;
+    rdfs:domain edu:Municipality ;
+    rdfs:range xsd:integer ;
+    rdfs:comment "Number of upper secondary schools (scuole secondarie di secondo grado) in the municipality, school year 2012/2013. Project extension." .
