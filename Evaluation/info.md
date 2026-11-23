@@ -18,14 +18,14 @@ The instance graph was parsed with `rdflib` 7.6.0 (Turtle parser) and checked wi
 | `istatCode` values | 176 | 176 |
 | `area` values | 176 | 176 |
 | Count values (4 properties) | 162 each | 648 triples |
-| `locatedIn` links pointing to a non-existent municipality | 0 | 0 |
+| `has_municipality` links pointing to a non-existent municipality | 0 | 0 |
 | Empty `name` literals | 0 | 0 |
 | Municipalities without `name` | 0 | 0 |
 | URIs referring to a local mapping server | 0 | 0 |
 
 ## 2. Data-quality observations
 
-- 41 of 47 educational institutions are linked to a municipality; 6 institutions have no municipality in the source data and are kept as instances without `locatedIn`.
+- 41 of 47 educational institutions are linked to a municipality; 6 institutions have no municipality in the source data and are kept as instances without `has_municipality`.
 - 149 of 153 kindergartens are linked to a municipality. The municipality was recovered from the address field (the town name following the 5-digit CAP); the 4 unresolved kindergartens are located in municipalities created in 2020 that are not part of the 176-row municipality list.
 - The four count tables were reduced from 166 to 162 rows: rows with an empty municipality were removed, because a count row without a municipality would produce an entity with no identity.
 
@@ -49,27 +49,27 @@ All queries below were executed on the instance graph. Results are the output of
 
 ```sparql
 # CQ1-a: types of institutions located in the municipality of Trento
-PREFIX edu: <http://kg2026.unitn.it/ontology/education#>
+PREFIX edu: <http://knowdive.disi.unitn.it/etype#>
 SELECT ?cls (COUNT(?x) AS ?n) WHERE {
-  ?x edu:locatedIn <http://kg2026.unitn.it/resource/municipality/Trento> .
+  ?x edu:has_municipality <http://kg2026.unitn.it/resource/municipality/Trento> .
   ?x a ?cls .
 } GROUP BY ?cls ORDER BY DESC(?n)
 ```
 
 ```sparql
 # CQ3-a: five municipalities with the most kindergartens
-PREFIX edu: <http://kg2026.unitn.it/ontology/education#>
+PREFIX edu: <http://knowdive.disi.unitn.it/etype#>
 SELECT ?mName ?n WHERE {
-  ?m edu:name ?mName ; edu:kindergartenCount ?n .
+  ?m edu:has_name ?mName ; edu:has_kindergartenCount ?n .
 } ORDER BY DESC(?n) LIMIT 5
 ```
 
 ```sparql
 # CQ4: number of municipalities without a higher-education institution
-PREFIX edu: <http://kg2026.unitn.it/ontology/education#>
+PREFIX edu: <http://knowdive.disi.unitn.it/etype#>
 SELECT (COUNT(?m) AS ?n) WHERE {
   ?m a edu:Municipality .
-  FILTER NOT EXISTS { ?h a edu:HigherEducationInstitution ; edu:locatedIn ?m }
+  FILTER NOT EXISTS { ?h a edu:HigherEducationInstitution ; edu:has_municipality ?m }
 }
 ```
 
