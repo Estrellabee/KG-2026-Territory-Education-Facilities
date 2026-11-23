@@ -42,18 +42,18 @@ depend on the machine or the session in which it was produced.
 
 | Column | RDF | Datatype |
 |---|---|---|
-| `comune-name` | subject URI (`resource/municipality/…`), `rdf:type edu:Municipality`, `edu:name` | string |
-| `comune-code` | `edu:istatCode` | string (identifier, not an integer) |
-| `area` | `edu:area` | `xsd:decimal` |
+| `comune-name` | subject URI (`resource/municipality/…`), `rdf:type edu:Municipality`, `edu:has_name` | string |
+| `comune-code` | `edu:has_istatCode` | string (identifier, not an integer) |
+| `area` | `edu:has_area` | `xsd:decimal` |
 
 ### M2..M5 — `count-*.csv` → additional properties of the same municipality
 
 | Source | Column | RDF predicate |
 |---|---|---|
-| `count-kindergarten.csv` | `count_kindergarten` | `edu:kindergartenCount` |
-| `count-primary.csv` | `count_primary` | `edu:primarySchoolCount` |
-| `count-lower-secondary.csv` | `count_lower_secondary` | `edu:lowerSecondarySchoolCount` |
-| `count-upper-secondary.csv` | `count_upper_secondary` | `edu:upperSecondarySchoolCount` |
+| `count-kindergarten.csv` | `count_kindergarten` | `edu:has_kindergartenCount` |
+| `count-primary.csv` | `count_primary` | `edu:has_primarySchoolCount` |
+| `count-lower-secondary.csv` | `count_lower_secondary` | `edu:has_lowerSecondarySchoolCount` |
+| `count-upper-secondary.csv` | `count_upper_secondary` | `edu:has_upperSecondarySchoolCount` |
 
 `municipality` produces the same subject URI as in M1 (same namespace +
 identical name string), so the counts are attached to the entity already created
@@ -64,12 +64,12 @@ by the commune list — this is the join of the whole project. Values are
 
 | Column | RDF |
 |---|---|
-| `institute_name` | subject URI (`resource/institution/…`), `rdf:type edu:EducationalInstitution`, `edu:name` |
-| `institute_address` | `edu:address` (string) |
-| `institute_type` | `edu:ownershipType` (string, enumerated `public` / `religious` / `lay`) |
-| `institute_comune` | `edu:locatedIn` → URI of the municipality (`resource/municipality/…`) |
+| `institute_name` | subject URI (`resource/institution/…`), `rdf:type edu:EducationalInstitution`, `edu:has_name` |
+| `institute_address` | `edu:has_address` (string) |
+| `institute_type` | `edu:has_ownershipType` (string, enumerated `public` / `religious` / `lay`) |
+| `institute_comune` | `edu:has_municipality` → URI of the municipality (`resource/municipality/…`) |
 
-`edu:locatedIn` is the object property of the ontology; its object is the
+`edu:has_municipality` is the object property of the ontology; its object is the
 municipality entity produced by M1, which is why the municipality strings had to
 be normalised before mapping.
 
@@ -77,10 +77,10 @@ be normalised before mapping.
 
 | Column | RDF |
 |---|---|
-| `nome_istituto` | subject URI (`resource/kindergarten/…`), `rdf:type edu:Kindergarten`, `edu:name` |
-| `indirizzo` | `edu:address` (string) |
-| `tipo_instituto` | `edu:schoolLevel` (`kindergarten`) |
-| *derived from `indirizzo`* | `edu:locatedIn` → municipality |
+| `nome_istituto` | subject URI (`resource/kindergarten/…`), `rdf:type edu:Kindergarten`, `edu:has_name` |
+| `indirizzo` | `edu:has_address` (string) |
+| `tipo_instituto` | `edu:has_schoolLevel` (`kindergarten`) |
+| *derived from `indirizzo`* | `edu:has_municipality` → municipality |
 
 The source has no municipality column; each address ends with
 `- <CAP> <MUNICIPALITY>`, so the municipality is parsed out of the address
@@ -93,8 +93,8 @@ the commune list (see 4.6).
 The file is already RDF (knowdive vocabulary). Its single institute
 (Università degli studi di Trento, Via Calepina 14) is re-expressed in the
 project ontology as `rdf:type edu:HigherEducationInstitution`,
-`edu:name`, `edu:address`, `edu:schoolLevel "higher"` and
-`edu:locatedIn` → `resource/municipality/Trento`.
+`edu:has_name`, `edu:has_address`, `edu:has_schoolLevel "higher"` and
+`edu:has_municipality` → `resource/municipality/Trento`.
 
 ## 4.4 Resulting graph
 
@@ -106,20 +106,20 @@ project ontology as `rdf:type edu:HigherEducationInstitution`,
 | Kindergartens | 153 |
 | Higher education institutions | 1 |
 | Entities with an identifier | 377 |
-| `edu:istatCode` / `edu:area` triples | 176 / 176 |
+| `edu:has_istatCode` / `edu:has_area` triples | 176 / 176 |
 | count triples (per level) | 162 |
 
 Example triples:
 
 ```turtle
 res:municipality/Trento a edu:Municipality ;
-    edu:name "Trento" ;
-    edu:istatCode "22205" ;
-    edu:area "157.9"^^xsd:decimal ;
-    edu:kindergartenCount 41 ;
-    edu:primarySchoolCount 32 ;
-    edu:lowerSecondarySchoolCount 13 ;
-    edu:upperSecondarySchoolCount 16 .
+    edu:has_name "Trento" ;
+    edu:has_istatCode "22205" ;
+    edu:has_area "157.9"^^xsd:decimal ;
+    edu:has_kindergartenCount 41 ;
+    edu:has_primarySchoolCount 32 ;
+    edu:has_lowerSecondarySchoolCount 13 ;
+    edu:has_upperSecondarySchoolCount 16 .
 ```
 
 ## 4.5 Validation
@@ -127,9 +127,9 @@ res:municipality/Trento a edu:Municipality ;
 | Check | Result |
 |---|---|
 | Turtle parses (rdflib 7.6) | OK |
-| `edu:locatedIn` objects that are not municipalities | 0 (no dangling link) |
-| Empty `edu:name` literals | 0 |
-| Municipalities without `edu:name` | 0 |
+| `edu:has_municipality` objects that are not municipalities | 0 (no dangling link) |
+| Empty `edu:has_name` literals | 0 |
+| Municipalities without `edu:has_name` | 0 |
 | Institutions without a municipality | 6 (12.8 %, see 4.6) |
 | Kindergartens without a municipality | 4 (2.6 %, see 4.6) |
 
@@ -138,7 +138,7 @@ Sample SPARQL (executed on the graph):
 ```sparql
 # CQ1  which institution types exist in Trento
 SELECT ?cls (COUNT(?x) AS ?n) WHERE {
-  ?x edu:locatedIn <http://kg2026.unitn.it/resource/municipality/Trento> .
+  ?x edu:has_municipality <http://kg2026.unitn.it/resource/municipality/Trento> .
   ?x a ?cls .
 } GROUP BY ?cls
 ```
@@ -146,7 +146,7 @@ SELECT ?cls (COUNT(?x) AS ?n) WHERE {
 
 ```sparql
 # CQ3  municipalities with most / fewest kindergartens
-SELECT ?name ?n WHERE { ?m edu:name ?name ; edu:kindergartenCount ?n }
+SELECT ?name ?n WHERE { ?m edu:has_name ?name ; edu:has_kindergartenCount ?n }
 ORDER BY DESC(?n) LIMIT 5
 ```
 → `Trento 41`, `Rovereto 15`, `Pergine Valsugana 6`, `Predaia 6`, `Ala 5`;
@@ -156,7 +156,7 @@ the minimum is `0` in 25 municipalities.
 # CQ4  municipalities without any higher education institution
 SELECT (COUNT(?m) AS ?n) WHERE {
   ?m a edu:Municipality .
-  FILTER NOT EXISTS { ?h a edu:HigherEducationInstitution ; edu:locatedIn ?m }
+  FILTER NOT EXISTS { ?h a edu:HigherEducationInstitution ; edu:has_municipality ?m }
 }
 ```
 → `175` (only Trento hosts a university).
@@ -169,14 +169,14 @@ SELECT (COUNT(?m) AS ?n) WHERE {
    municipalities cannot be reconciled: Strigno, Taio, Transacqua, Tuenno,
    Vezzano, Vigolo Vattaro (merged before 2020) and Borgo d'Anaunia, Novella,
    Terre d'Adige, Ville di Fiemme (created in 2020). Six institutions and four
-   kindergartens therefore carry no `locatedIn` link, and the four count rows
+   kindergartens therefore carry no `has_municipality` link, and the four count rows
    naming 2020 municipalities were dropped (162 rows per level).
 2. **Counts are 2012/13, the directory is current.** For Trento the count table
    reports 41 kindergartens while the directory lists 19 entities: the two
    sources describe different school years. Counts are used for ranking (CQ3)
    and existence per level (CQ1/Sup6), the directory for named kindergarten
    entities; the two are not expected to agree row by row.
-3. **No coordinates, no landmark data.** `edu:near` and `edu:NaturalLandmark`
+3. **No coordinates, no landmark data.** `edu:has_proximity` and `edu:NaturalLandmark`
    remain in the ontology but have no instances, so CQ2 is not answerable with
    the collected sources (it stays an acknowledged limitation, as declared in
    Phase 1).

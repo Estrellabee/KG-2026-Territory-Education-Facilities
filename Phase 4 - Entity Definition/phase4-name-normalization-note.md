@@ -1,12 +1,12 @@
 # Phase 4 — Municipality Name Normalisation Note
 
 > Purpose: make the municipality name in every cleaned table identical to the
-> `comune-name` value in `commune-list.csv`, so that the `locatedIn` object
+> `comune-name` value in `commune-list.csv`, so that the `has_municipality` object
 > property can be materialised in Karma (object URI = municipality URI).
 
 ## 1. Why this step was needed
 
-Karma builds the object URI of `locatedIn` from the literal value of the source
+Karma builds the object URI of `has_municipality` from the literal value of the source
 column. The link therefore only exists if the two strings are byte-identical.
 The raw sources used different conventions:
 
@@ -42,7 +42,7 @@ The raw sources used different conventions:
 | File | Rows | Linkable after normalisation | Left empty / dropped |
 |---|---|---|---|
 | `commune-list.csv` | 176 | 176 (1 name corrected) | 0 |
-| `institutions.csv` | 47 | 41 | 6 left without `locatedIn` |
+| `institutions.csv` | 47 | 41 | 6 left without `has_municipality` |
 | `count-kindergarten.csv` | 162 | 162 | 4 rows dropped (formerly 166) |
 | `count-primary.csv` | 162 | 162 | 4 rows dropped (formerly 166) |
 | `count-lower-secondary.csv` | 162 | 162 | 4 rows dropped (formerly 166) |
@@ -81,7 +81,7 @@ reconciled and are therefore not linked:
   `Terre d'Adige`, `Ville di Fiemme`.
 
 Consequence to be reported in the Evaluation chapter: 6 institutions (12.8 %)
-carry no `locatedIn` link, and 4 count rows per level (2.5 %) were dropped.
+carry no `has_municipality` link, and 4 count rows per level (2.5 %) were dropped.
 The remaining 162 municipalities of each count table are the ones present in
 `commune-list.csv`; the ranking required by CQ3 is computed on those, and the
 four 2020 municipalities (Borgo d'Anaunia, Novella, Terre d'Adige, Ville di
