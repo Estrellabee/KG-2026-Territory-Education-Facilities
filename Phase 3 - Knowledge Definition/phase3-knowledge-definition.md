@@ -41,6 +41,19 @@ This phase formalizes the vocabulary defined in Phase 2 into a machine-readable 
 | istatCode | Municipality | xsd:string | ISTAT municipality code |
 | area | Municipality | xsd:decimal | Surface area of the municipality |
 
+### Data properties added during Phase 4
+
+The Phase 3 property set above does not cover the four school-count tables. These tables do not describe individual facilities: each row reports *how many* schools of one level a municipality has, which is an attribute of the municipality. To keep the instance graph faithful to the source data (and to answer CQ3 and supporting question 6), four data properties were added to the ETG during Phase 4. The ontology file `education-facilities-ontology.ttl` in this folder is the updated version (92 triples, 8 classes, 3 object properties, 10 data properties).
+
+| Property | Domain | Range / datatype | Notes |
+|---|---|---|---|
+| kindergartenCount | Municipality | xsd:integer | Number of kindergartens in the municipality; source `count-kindergarten.csv` |
+| primarySchoolCount | Municipality | xsd:integer | Number of primary schools in the municipality; source `count-primary.csv` |
+| lowerSecondarySchoolCount | Municipality | xsd:integer | Number of lower secondary schools in the municipality; source `count-lower-secondary.csv` |
+| upperSecondarySchoolCount | Municipality | xsd:integer | Number of upper secondary schools in the municipality; source `count-upper-secondary.csv` |
+
+Additional constraint introduced by this extension: school counts are modelled as attributes of the municipality and are not derived from the individual institution instances, so a municipality may legitimately report a non-zero count without having individual facilities in the graph.
+
 ## Constraints
 - Every `EducationalInstitution` must be linked to exactly one `Municipality` through `locatedIn`.
 - An institution instance is assigned to exactly one `schoolLevel` subclass.
