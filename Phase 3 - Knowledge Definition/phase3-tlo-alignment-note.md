@@ -68,20 +68,20 @@ for properties. No instance was re-typed and no triple of the entity graph was r
 | `edu:PrimarySchool`, `edu:SecondarySchool` | inherited from `edu:EducationalInstitution` | the KTLO has no separate primary/secondary classes (its `primary`/`secondary` classes are OSM *road* types and must not be reused) |
 | `edu:GeoFeature` | `ktlo:openstreetmap_place` | keeps the geographical branch inside the supplied ontology |
 | `edu:NaturalLandmark` | `ktlo:natural` | class only — no landmark coordinates exist in the sources |
-| `edu:name` | `ktlo:name` | all project classes end up below `ktlo:openstreetmap_place`, so the KTLO domain restriction holds |
-| `edu:istatCode` | `ktlo:code` | the official identifier of a municipality |
-| `edu:locatedIn` | `schema:containedInPlace` | domain/range are compatible (`EducationalInstitution` is a `School`, hence a `CivicStructure`, hence a `Place`) |
+| `edu:has_name` | `ktlo:name` | all project classes end up below `ktlo:openstreetmap_place`, so the KTLO domain restriction holds |
+| `edu:has_istatCode` | `ktlo:code` | the official identifier of a municipality |
+| `edu:has_municipality` | `schema:containedInPlace` | domain/range are compatible (`EducationalInstitution` is a `School`, hence a `CivicStructure`, hence a `Place`) |
 
 Deliberately **not** aligned, with reasons (these are project extensions):
 
-- `edu:near` — the KTLO has no spatial relation at all (it is a taxonomy, not a
+- `edu:has_proximity` — the KTLO has no spatial relation at all (it is a taxonomy, not a
   relation ontology), and no fragment offers a "near" property;
-- `edu:hasEducationalInstitution` — inverse of `locatedIn`, no counterpart;
-- `edu:address`, `edu:area` — `schema:address` and `schema:area` are declared as **object**
+- `edu:hasEducationalInstitution` — inverse of `has_municipality`, no counterpart;
+- `edu:has_address`, `edu:has_area` — `schema:address` and `schema:area` are declared as **object**
   properties in `full-schema-org.owl` (schema.org allows both a literal and an entity
   value), so a datatype property cannot be declared a sub-property of them without
   making the ontology inconsistent;
-- `edu:ownershipType`, `edu:schoolLevel`, and the four `*Count` properties — no
+- `edu:has_ownershipType`, `edu:has_schoolLevel`, and the four `*Count` properties — no
   counterpart in the fragments (`ktlo:population` counts residents, not facilities).
 
 ---
@@ -91,7 +91,7 @@ Deliberately **not** aligned, with reasons (these are project extensions):
 Parsing `education-facilities-ontology-aligned.ttl` with rdflib 7.6.0, merging it with the
 three imported fragments:
 
-- aligned ontology: **118 triples** (92 in the inception version + 26 alignment axioms);
+- aligned ontology: **117 triples** (105 in the inception version + 12 structural axioms: 3 imports, 6 subclass, 3 sub-property);
 - `owl:imports` resolved to the three fragment IRIs;
 - ancestor check, **8 of 8** project classes land in the expected supplied class:
 
