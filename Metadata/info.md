@@ -39,13 +39,14 @@ Cleaned files are stored in `Phase 4 - Entity Definition/cleaned/`. Municipality
 
 | # | Resource | Phase | Type | Format | Size | Content |
 |---|---|---|---|---|---|---|
-| 18 | `education-facilities-ontology.ttl` | 3 | Ontology (ETG) | Turtle | 5,278 bytes / 92 triples | 8 classes, 3 object properties, 10 data properties; namespace `http://kg2026.unitn.it/ontology/education#` |
-| 19 | `education-facilities-kg.ttl` | 4 | Instance graph | Turtle | 118,103 bytes / 2,347 triples | 377 entities: 176 municipalities, 47 educational institutions, 153 kindergartens, 1 higher-education institution |
-| 20 | `phase4-entity-mapping.md` | 4 | Documentation | Markdown | 8,273 bytes | Mapping specification, validation results and open issues |
-| 21 | `phase4-name-normalization-note.md` | 4 | Documentation | Markdown | 4,704 bytes | Record of the municipality-name normalisation and cleaning decisions |
+| 18 | `education-facilities-ontology.ttl` | 3 | Ontology (ETG) | Turtle | 7,280 bytes / 105 triples | 8 classes, 3 object properties, 10 data properties; namespace `http://knowdive.disi.unitn.it/etype#` |
+| 19 | `education-facilities-kg.ttl` | 4 | Instance graph | Turtle | 129,277 bytes / 2,347 triples | 377 entities: 176 municipalities, 47 educational institutions, 153 kindergartens, 1 higher-education institution |
+| 20 | `phase4-entity-mapping.md` | 4 | Documentation | Markdown | 8639 bytes | Mapping specification, validation results and open issues |
+| 21 | `phase4-name-normalization-note.md` | 4 | Documentation | Markdown | 4821 bytes | Record of the municipality-name normalisation and cleaning decisions |
 
 Both RDF resources use the same ontology namespace; instance URIs follow the pattern `http://kg2026.unitn.it/resource/{class}/{percent-encoded name}`, with one sub-namespace per entity type (`municipality`, `institution`, `kindergarten`, `university`).
 
 ## 4. Tools
 
 OpenRefine 3.10.0 (data cleaning), Karma 2.5.8 (mapping experiments), Python 3.13 with `rdflib` 7.6.0 (graph generation, validation and query execution).
+
