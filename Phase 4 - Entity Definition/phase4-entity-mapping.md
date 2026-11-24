@@ -100,7 +100,7 @@ project ontology as `rdf:type edu:HigherEducationInstitution`,
 
 | Measure | Value |
 |---|---|
-| Triples | 2 347 |
+| Triples produced by the mapping | 2 347 |
 | Municipalities | 176 |
 | Educational institutions | 47 |
 | Kindergartens | 153 |
@@ -108,6 +108,8 @@ project ontology as `rdf:type edu:HigherEducationInstitution`,
 | Entities with an identifier | 377 |
 | `edu:has_istatCode` / `edu:has_area` triples | 176 / 176 |
 | count triples (per level) | 162 |
+
+The delivered file adds one `rdfs:label` triple per entity (377 in total, equal to its `has_name`), so the repository holds **2 724** statements for the entity layer.
 
 Example triples:
 
