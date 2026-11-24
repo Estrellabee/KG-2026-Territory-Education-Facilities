@@ -87,7 +87,7 @@ IRI is stable across runs of `build_kg.py`; the labels are regenerated with
 | Stage | Tool | Version |
 |---|---|---|
 | cleaning | OpenRefine | 3.10 |
-| mapping | Karma | 2.5.8 |
+| mapping | Karma | 2.5.2 |
 | ontology inspection | Protégé | 5.6.3 |
 | storage and querying | GraphDB (Graphwise Sandbox) | 11.5.3 |
 
