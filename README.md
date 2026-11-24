@@ -29,7 +29,7 @@ Source datasets: Trentino municipality list (ISTAT codes and surface area), list
 - Ontology namespace: `http://knowdive.disi.unitn.it/etype#`
 - Instance namespace: `http://kg2026.unitn.it/resource/`
 
-The instance graph contains 2,347 triples: 176 municipalities, 47 educational institutions, 153 kindergartens and 1 higher-education institution. The ontology defines 8 classes, 3 object properties and 10 data properties.
+The instance graph contains 2,724 triples: 176 municipalities, 47 educational institutions, 153 kindergartens and 1 higher-education institution, plus 377 `rdfs:label` triples added for display. The ontology defines 8 classes, 3 object properties and 10 data properties.
 
 ## Tooling
 OpenRefine 3.10.0 for data cleaning, Karma 2.5.8 for the mapping experiments, Python 3.13 with `rdflib` 7.6.0 for graph generation, validation and query execution. The SPARQL queries answering the competency questions are documented in `Evaluation`.
