@@ -2725,3 +2725,386 @@
     edu:has_primarySchoolCount 32 ;
     edu:has_upperSecondarySchoolCount 16 .
 
+
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+# ---------------------------------------------------------------------------
+# rdfs:label for every entity (same text as has_name), added so that generic
+# RDF viewers display readable node captions instead of the IRI local name.
+# ---------------------------------------------------------------------------
+<http://kg2026.unitn.it/resource/institution/ASSOCIAZIONE%20PEDAGOGICA%20STEINERIANA%20-%20TRENTO> rdfs:label "ASSOCIAZIONE PEDAGOGICA STEINERIANA - TRENTO" .
+<http://kg2026.unitn.it/resource/institution/COLLEGIO%20ARCIVESCOVILE%20C.ENDRICI%20-%20TRENTO> rdfs:label "COLLEGIO ARCIVESCOVILE C.ENDRICI - TRENTO" .
+<http://kg2026.unitn.it/resource/institution/COLLEGIO%20ARCIVESCOVILE%20DAME%20INGLESI%20-%20ROVERETO> rdfs:label "COLLEGIO ARCIVESCOVILE DAME INGLESI - ROVERETO" .
+<http://kg2026.unitn.it/resource/institution/COOPERATIVA%20SOCIALE%20A%20R.L.%20G.VERONESI%20-%20ROVERETO> rdfs:label "COOPERATIVA SOCIALE A R.L. G.VERONESI - ROVERETO" .
+<http://kg2026.unitn.it/resource/institution/FONDAZIONE%20EDMUND%20MACH%20-%20ISTITUTO%20AGRARIO%20SAN%20MICHELE%20ALL%27ADIGE> rdfs:label "FONDAZIONE EDMUND MACH - ISTITUTO AGRARIO SAN MICHELE ALL'ADIGE" .
+<http://kg2026.unitn.it/resource/institution/ISTITUTO%20COMPRENSIVO%20ALDENO%20MATTARELLO> rdfs:label "ISTITUTO COMPRENSIVO ALDENO MATTARELLO" .
+<http://kg2026.unitn.it/resource/institution/ISTITUTO%20COMPRENSIVO%20DEL%20CHIESE%20%22Don%20L.%20Milani%22> rdfs:label "ISTITUTO COMPRENSIVO DEL CHIESE \"Don L. Milani\"" .
+<http://kg2026.unitn.it/resource/institution/ISTITUTO%20COMPRENSIVO%20DI%20SCUOLA%20PRIMARIA%20E%20SECONDARIA%20DI%20PRIMIERO> rdfs:label "ISTITUTO COMPRENSIVO DI SCUOLA PRIMARIA E SECONDARIA DI PRIMIERO" .
+<http://kg2026.unitn.it/resource/institution/ISTITUTO%20COMPRENSIVO%20ISERA%20-%20ROVERETO> rdfs:label "ISTITUTO COMPRENSIVO ISERA - ROVERETO" .
+<http://kg2026.unitn.it/resource/institution/ISTITUTO%20COMPRENSIVO%20RONCEGNO> rdfs:label "ISTITUTO COMPRENSIVO RONCEGNO" .
+<http://kg2026.unitn.it/resource/institution/ISTITUTO%20COMPRENSIVO%20ROVERETO%20EST> rdfs:label "ISTITUTO COMPRENSIVO ROVERETO EST" .
+<http://kg2026.unitn.it/resource/institution/ISTITUTO%20COMPRENSIVO%20STRIGNO%20E%20TESINO> rdfs:label "ISTITUTO COMPRENSIVO STRIGNO E TESINO" .
+<http://kg2026.unitn.it/resource/institution/ISTITUTO%20COMPRENSIVO%20TAIO> rdfs:label "ISTITUTO COMPRENSIVO TAIO" .
+<http://kg2026.unitn.it/resource/institution/ISTITUTO%20COMPRENSIVO%20TELVE> rdfs:label "ISTITUTO COMPRENSIVO TELVE" .
+<http://kg2026.unitn.it/resource/institution/ISTITUTO%20COMPRENSIVO%20TESERO> rdfs:label "ISTITUTO COMPRENSIVO TESERO" .
+<http://kg2026.unitn.it/resource/institution/ISTITUTO%20COMPRENSIVO%20TIONE> rdfs:label "ISTITUTO COMPRENSIVO TIONE" .
+<http://kg2026.unitn.it/resource/institution/ISTITUTO%20COMPRENSIVO%20TRENTO%201> rdfs:label "ISTITUTO COMPRENSIVO TRENTO 1" .
+<http://kg2026.unitn.it/resource/institution/ISTITUTO%20COMPRENSIVO%20TRENTO%202%20%22J.%20A.%20Comenius%22> rdfs:label "ISTITUTO COMPRENSIVO TRENTO 2 \"J. A. Comenius\"" .
+<http://kg2026.unitn.it/resource/institution/ISTITUTO%20COMPRENSIVO%20TRENTO%203> rdfs:label "ISTITUTO COMPRENSIVO TRENTO 3" .
+<http://kg2026.unitn.it/resource/institution/ISTITUTO%20COMPRENSIVO%20TRENTO%204> rdfs:label "ISTITUTO COMPRENSIVO TRENTO 4" .
+<http://kg2026.unitn.it/resource/institution/ISTITUTO%20COMPRENSIVO%20TRENTO%205> rdfs:label "ISTITUTO COMPRENSIVO TRENTO 5" .
+<http://kg2026.unitn.it/resource/institution/ISTITUTO%20COMPRENSIVO%20TRENTO%206> rdfs:label "ISTITUTO COMPRENSIVO TRENTO 6" .
+<http://kg2026.unitn.it/resource/institution/ISTITUTO%20COMPRENSIVO%20TRENTO%207> rdfs:label "ISTITUTO COMPRENSIVO TRENTO 7" .
+<http://kg2026.unitn.it/resource/institution/ISTITUTO%20COMPRENSIVO%20TUENNO> rdfs:label "ISTITUTO COMPRENSIVO TUENNO" .
+<http://kg2026.unitn.it/resource/institution/ISTITUTO%20COMPRENSIVO%20VEZZANO> rdfs:label "ISTITUTO COMPRENSIVO VEZZANO" .
+<http://kg2026.unitn.it/resource/institution/ISTITUTO%20COMPRENSIVO%20VIGOLO%20VATTARO> rdfs:label "ISTITUTO COMPRENSIVO VIGOLO VATTARO" .
+<http://kg2026.unitn.it/resource/institution/ISTITUTO%20COMPRENSIVO%20VILLA%20LAGARINA> rdfs:label "ISTITUTO COMPRENSIVO VILLA LAGARINA" .
+<http://kg2026.unitn.it/resource/institution/ISTITUTO%20COMPRENSIVO%20VOLANO%20-%20ROVERETO%20NORD> rdfs:label "ISTITUTO COMPRENSIVO VOLANO - ROVERETO NORD" .
+<http://kg2026.unitn.it/resource/institution/ISTITUTO%20DI%20ISTRUZIONE%20%22L.%20Guetti%22%20-%20TIONE%20DI%20TRENTO> rdfs:label "ISTITUTO DI ISTRUZIONE \"L. Guetti\" - TIONE DI TRENTO" .
+<http://kg2026.unitn.it/resource/institution/ISTITUTO%20DI%20ISTRUZIONE%20%22don%20L.Milani%22%20-%20ROVERETO> rdfs:label "ISTITUTO DI ISTRUZIONE \"don L.Milani\" - ROVERETO" .
+<http://kg2026.unitn.it/resource/institution/ISTITUTO%20DI%20ISTRUZIONE%20DELLE%20ARTI%20%22Vittoria%20Bonporti%20Depero%22%20-%20TRENTO> rdfs:label "ISTITUTO DI ISTRUZIONE DELLE ARTI \"Vittoria Bonporti Depero\" - TRENTO" .
+<http://kg2026.unitn.it/resource/institution/ISTITUTO%20MARIA%20SS.BAMBINA%20-%20TRENTO> rdfs:label "ISTITUTO MARIA SS.BAMBINA - TRENTO" .
+<http://kg2026.unitn.it/resource/institution/ISTITUTO%20PROF.SERVIZI%20COMM.E%20TURISTICI%20%22L.Battisti%22%20-%20TRENTO> rdfs:label "ISTITUTO PROF.SERVIZI COMM.E TURISTICI \"L.Battisti\" - TRENTO" .
+<http://kg2026.unitn.it/resource/institution/ISTITUTO%20SACRA%20FAMIGLIA> rdfs:label "ISTITUTO SACRA FAMIGLIA" .
+<http://kg2026.unitn.it/resource/institution/ISTITUTO%20SACRO%20CUORE%20-%20TRENTO> rdfs:label "ISTITUTO SACRO CUORE - TRENTO" .
+<http://kg2026.unitn.it/resource/institution/ISTITUTO%20TECNICO%20COMMERCIALE%20%22A.Tambosi%22%20-%20TRENTO> rdfs:label "ISTITUTO TECNICO COMMERCIALE \"A.Tambosi\" - TRENTO" .
+<http://kg2026.unitn.it/resource/institution/ISTITUTO%20TECNICO%20ECONOMICO%20E%20TECNOLOGICO%20%22F.e%20G.Fontana%22%20-%20ROVERETO> rdfs:label "ISTITUTO TECNICO ECONOMICO E TECNOLOGICO \"F.e G.Fontana\" - ROVERETO" .
+<http://kg2026.unitn.it/resource/institution/ISTITUTO%20TECNICO%20TECNOLOGICO%20%22A.Pozzo%22%20-%20TRENTO> rdfs:label "ISTITUTO TECNICO TECNOLOGICO \"A.Pozzo\" - TRENTO" .
+<http://kg2026.unitn.it/resource/institution/ISTITUTO%20TECNICO%20TECNOLOGICO%20%22G.%20Marconi%22%20-%20ROVERETO> rdfs:label "ISTITUTO TECNICO TECNOLOGICO \"G. Marconi\" - ROVERETO" .
+<http://kg2026.unitn.it/resource/institution/ISTITUTO%20TECNICO%20TECNOLOGICO%20%22M.%20Buonarroti%22%20-%20TRENTO> rdfs:label "ISTITUTO TECNICO TECNOLOGICO \"M. Buonarroti\" - TRENTO" .
+<http://kg2026.unitn.it/resource/institution/LICEO%20%22A.%20Maffei%22%20-%20RIVA%20DEL%20GARDA> rdfs:label "LICEO \"A. Maffei\" - RIVA DEL GARDA" .
+<http://kg2026.unitn.it/resource/institution/LICEO%20%22A.%20Rosmini%22%20-%20ROVERETO> rdfs:label "LICEO \"A. Rosmini\" - ROVERETO" .
+<http://kg2026.unitn.it/resource/institution/LICEO%20%22A.%20Rosmini%22%20-%20TRENTO> rdfs:label "LICEO \"A. Rosmini\" - TRENTO" .
+<http://kg2026.unitn.it/resource/institution/LICEO%20%22F.Filzi%22%20-%20ROVERETO> rdfs:label "LICEO \"F.Filzi\" - ROVERETO" .
+<http://kg2026.unitn.it/resource/institution/LICEO%20CLASSICO%20%22G.Prati%22%20-%20TRENTO> rdfs:label "LICEO CLASSICO \"G.Prati\" - TRENTO" .
+<http://kg2026.unitn.it/resource/institution/LICEO%20SCIENTIFICO%20%22G.%20Galilei%22%20-%20TRENTO> rdfs:label "LICEO SCIENTIFICO \"G. Galilei\" - TRENTO" .
+<http://kg2026.unitn.it/resource/institution/LICEO%20SCIENTIFICO%20%22L.%20Da%20Vinci%22%20-%20TRENTO> rdfs:label "LICEO SCIENTIFICO \"L. Da Vinci\" - TRENTO" .
+<http://kg2026.unitn.it/resource/kindergarten/ASSOCIAZIONE%20RUDOLF%20STEINER%20PER%20LA%20PEDAGOGIA%20APS%20-%20ROVERETO> rdfs:label "ASSOCIAZIONE RUDOLF STEINER PER LA PEDAGOGIA APS - ROVERETO" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Ala> rdfs:label "Scuola dell'infanzia di Ala" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Albiano> rdfs:label "Scuola dell'infanzia di Albiano" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Aldeno> rdfs:label "Scuola dell'infanzia di Aldeno" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Andalo> rdfs:label "Scuola dell'infanzia di Andalo" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Arco> rdfs:label "Scuola dell'infanzia di Arco" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Avio> rdfs:label "Scuola dell'infanzia di Avio" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Barco%20di%20Levico> rdfs:label "Scuola dell'infanzia di Barco di Levico" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Bolognano> rdfs:label "Scuola dell'infanzia di Bolognano" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Bondone> rdfs:label "Scuola dell'infanzia di Bondone" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Borgo%20Sacco> rdfs:label "Scuola dell'infanzia di Borgo Sacco" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Borgo%20Valsugana> rdfs:label "Scuola dell'infanzia di Borgo Valsugana" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Breguzzo%20-%20Bondo%20%22Giuseppina%20Bonazza%22> rdfs:label "Scuola dell'infanzia di Breguzzo - Bondo \"Giuseppina Bonazza\"" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Brentonico> rdfs:label "Scuola dell'infanzia di Brentonico" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Calceranica> rdfs:label "Scuola dell'infanzia di Calceranica" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Caldonazzo> rdfs:label "Scuola dell'infanzia di Caldonazzo" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Campitello%20di%20Fassa> rdfs:label "Scuola dell'infanzia di Campitello di Fassa" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Campodenno> rdfs:label "Scuola dell'infanzia di Campodenno" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Carano> rdfs:label "Scuola dell'infanzia di Carano" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Carisolo> rdfs:label "Scuola dell'infanzia di Carisolo" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Casez> rdfs:label "Scuola dell'infanzia di Casez" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Castellano> rdfs:label "Scuola dell'infanzia di Castellano" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Castello%20Di%20Fiemme> rdfs:label "Scuola dell'infanzia di Castello Di Fiemme" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Castelnuovo> rdfs:label "Scuola dell'infanzia di Castelnuovo" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Cavalese> rdfs:label "Scuola dell'infanzia di Cavalese" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Cavedine> rdfs:label "Scuola dell'infanzia di Cavedine" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Cembra> rdfs:label "Scuola dell'infanzia di Cembra" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Chizzola> rdfs:label "Scuola dell'infanzia di Chizzola" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Cles> rdfs:label "Scuola dell'infanzia di Cles" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Cloz%20e%20Brez> rdfs:label "Scuola dell'infanzia di Cloz e Brez" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Condino> rdfs:label "Scuola dell'infanzia di Condino" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Coredo> rdfs:label "Scuola dell'infanzia di Coredo" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Cristo%20Re%20-Trento> rdfs:label "Scuola dell'infanzia di Cristo Re -Trento" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Crosano> rdfs:label "Scuola dell'infanzia di Crosano" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Dambel> rdfs:label "Scuola dell'infanzia di Dambel" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Daone> rdfs:label "Scuola dell'infanzia di Daone" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Denno> rdfs:label "Scuola dell'infanzia di Denno" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Dimaro> rdfs:label "Scuola dell'infanzia di Dimaro" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Faver> rdfs:label "Scuola dell'infanzia di Faver" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Fiav%C3%A8> rdfs:label "Scuola dell'infanzia di Fiavè" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Fiera%20di%20Primiero> rdfs:label "Scuola dell'infanzia di Fiera di Primiero" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Fondo> rdfs:label "Scuola dell'infanzia di Fondo" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Fornace> rdfs:label "Scuola dell'infanzia di Fornace" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Gardolo> rdfs:label "Scuola dell'infanzia di Gardolo" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Ghiaie%20di%20Gardolo> rdfs:label "Scuola dell'infanzia di Ghiaie di Gardolo" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Grigno> rdfs:label "Scuola dell'infanzia di Grigno" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Ischia%20di%20Pergine> rdfs:label "Scuola dell'infanzia di Ischia di Pergine" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Lavis%20%22Madre%20Maddalena%20di%20Canossa%22> rdfs:label "Scuola dell'infanzia di Lavis \"Madre Maddalena di Canossa\"" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Lizzana> rdfs:label "Scuola dell'infanzia di Lizzana" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Lizzanella> rdfs:label "Scuola dell'infanzia di Lizzanella" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Lodrone> rdfs:label "Scuola dell'infanzia di Lodrone" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Lona> rdfs:label "Scuola dell'infanzia di Lona" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Madonna%20di%20Campiglio> rdfs:label "Scuola dell'infanzia di Madonna di Campiglio" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Madrano> rdfs:label "Scuola dell'infanzia di Madrano" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Mal%C3%A8> rdfs:label "Scuola dell'infanzia di Malè" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Marco%20Rovereto%20%22G.e%20A.%20Rosmini%20Serbati%22> rdfs:label "Scuola dell'infanzia di Marco Rovereto \"G.e A. Rosmini Serbati\"" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Marter> rdfs:label "Scuola dell'infanzia di Marter" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Martignano%20%22D.%20Leone%20Serafini%22> rdfs:label "Scuola dell'infanzia di Martignano \"D. Leone Serafini\"" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Masi%20di%20Cavalese> rdfs:label "Scuola dell'infanzia di Masi di Cavalese" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Massone> rdfs:label "Scuola dell'infanzia di Massone" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Mechel> rdfs:label "Scuola dell'infanzia di Mechel" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Mezzano> rdfs:label "Scuola dell'infanzia di Mezzano" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Mezzocorona> rdfs:label "Scuola dell'infanzia di Mezzocorona" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Mezzolombardo> rdfs:label "Scuola dell'infanzia di Mezzolombardo" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Moena> rdfs:label "Scuola dell'infanzia di Moena" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Molina%20di%20Ledro> rdfs:label "Scuola dell'infanzia di Molina di Ledro" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Mollaro> rdfs:label "Scuola dell'infanzia di Mollaro" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Molveno> rdfs:label "Scuola dell'infanzia di Molveno" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Montesover> rdfs:label "Scuola dell'infanzia di Montesover" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Mori> rdfs:label "Scuola dell'infanzia di Mori" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Nago> rdfs:label "Scuola dell'infanzia di Nago" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Nave%20San%20Rocco> rdfs:label "Scuola dell'infanzia di Nave San Rocco" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Nomi> rdfs:label "Scuola dell'infanzia di Nomi" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Ospedaletto> rdfs:label "Scuola dell'infanzia di Ospedaletto" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Padergnone> rdfs:label "Scuola dell'infanzia di Padergnone" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Panchi%C3%A0> rdfs:label "Scuola dell'infanzia di Panchià" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Pedersano> rdfs:label "Scuola dell'infanzia di Pedersano" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Pergine%20%22G.B.%20Chimelli%22> rdfs:label "Scuola dell'infanzia di Pergine \"G.B. Chimelli\"" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Pietramurata> rdfs:label "Scuola dell'infanzia di Pietramurata" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Pieve%20Tesino> rdfs:label "Scuola dell'infanzia di Pieve Tesino" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Pieve%20di%20Bono> rdfs:label "Scuola dell'infanzia di Pieve di Bono" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Pilcante> rdfs:label "Scuola dell'infanzia di Pilcante" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Pinzolo> rdfs:label "Scuola dell'infanzia di Pinzolo" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Ponte%20Arche> rdfs:label "Scuola dell'infanzia di Ponte Arche" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Povo> rdfs:label "Scuola dell'infanzia di Povo" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Pozza%20di%20Trambileno> rdfs:label "Scuola dell'infanzia di Pozza di Trambileno" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Predazzo> rdfs:label "Scuola dell'infanzia di Predazzo" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Pressano> rdfs:label "Scuola dell'infanzia di Pressano" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Quadra%20-%20Cavrasto> rdfs:label "Scuola dell'infanzia di Quadra - Cavrasto" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Ranzo> rdfs:label "Scuola dell'infanzia di Ranzo" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Riva%20%22Degasperi%22> rdfs:label "Scuola dell'infanzia di Riva \"Degasperi\"" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Riva%20%22Giardino%22> rdfs:label "Scuola dell'infanzia di Riva \"Giardino\"" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Riva%20del%20Garda%20%22S.%20Alessandro%22> rdfs:label "Scuola dell'infanzia di Riva del Garda \"S. Alessandro\"" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Roncegno> rdfs:label "Scuola dell'infanzia di Roncegno" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Ronchi%20Valsugana> rdfs:label "Scuola dell'infanzia di Ronchi Valsugana" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Roncogno%20di%20Pergine> rdfs:label "Scuola dell'infanzia di Roncogno di Pergine" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Roncone%20%22Mario%20Amistadi%20Sciavina%22> rdfs:label "Scuola dell'infanzia di Roncone \"Mario Amistadi Sciavina\"" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Ronzo-Chienis> rdfs:label "Scuola dell'infanzia di Ronzo-Chienis" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Rovereto%20%22Clementino%20Vannetti%22> rdfs:label "Scuola dell'infanzia di Rovereto \"Clementino Vannetti\"" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Rovereto%20%22Rosmini%22> rdfs:label "Scuola dell'infanzia di Rovereto \"Rosmini\"" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20S.%20Croce%20Bleggio> rdfs:label "Scuola dell'infanzia di S. Croce Bleggio" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20S.%20Lorenzo%20in%20Banale> rdfs:label "Scuola dell'infanzia di S. Lorenzo in Banale" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20S.%20Margherita%20di%20Ala> rdfs:label "Scuola dell'infanzia di S. Margherita di Ala" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Sabbionara> rdfs:label "Scuola dell'infanzia di Sabbionara" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20San%20Martino%20di%20C.> rdfs:label "Scuola dell'infanzia di San Martino di C." .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Sarche> rdfs:label "Scuola dell'infanzia di Sarche" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Scurelle> rdfs:label "Scuola dell'infanzia di Scurelle" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Segno> rdfs:label "Scuola dell'infanzia di Segno" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Segonzano> rdfs:label "Scuola dell'infanzia di Segonzano" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Serravalle> rdfs:label "Scuola dell'infanzia di Serravalle" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Siror> rdfs:label "Scuola dell'infanzia di Siror" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Smarano> rdfs:label "Scuola dell'infanzia di Smarano" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Sopramonte> rdfs:label "Scuola dell'infanzia di Sopramonte" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Spiazzo%20Rendena> rdfs:label "Scuola dell'infanzia di Spiazzo Rendena" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Spormaggiore> rdfs:label "Scuola dell'infanzia di Spormaggiore" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Stenico> rdfs:label "Scuola dell'infanzia di Stenico" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Storo> rdfs:label "Scuola dell'infanzia di Storo" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Strigno> rdfs:label "Scuola dell'infanzia di Strigno" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Sus%C3%A0> rdfs:label "Scuola dell'infanzia di Susà" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Taio> rdfs:label "Scuola dell'infanzia di Taio" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Telve> rdfs:label "Scuola dell'infanzia di Telve" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Tenno> rdfs:label "Scuola dell'infanzia di Tenno" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Tesero> rdfs:label "Scuola dell'infanzia di Tesero" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Tezze%20Valsugana> rdfs:label "Scuola dell'infanzia di Tezze Valsugana" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Tione%20di%20Trento%20%22Don%20Giovanni%20Failoni%22> rdfs:label "Scuola dell'infanzia di Tione di Trento \"Don Giovanni Failoni\"" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Tonadico> rdfs:label "Scuola dell'infanzia di Tonadico" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Torbole> rdfs:label "Scuola dell'infanzia di Torbole" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Torcegno> rdfs:label "Scuola dell'infanzia di Torcegno" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Transacqua> rdfs:label "Scuola dell'infanzia di Transacqua" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Trento%20%22A.%20Tambosi%22> rdfs:label "Scuola dell'infanzia di Trento \"A. Tambosi\"" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Trento%20%22G.%20B.%20Zanella%20ODV%22> rdfs:label "Scuola dell'infanzia di Trento \"G. B. Zanella ODV\"" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Trento%20%22Pedrotti%22> rdfs:label "Scuola dell'infanzia di Trento \"Pedrotti\"" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Trento%20%22S.%20Antonio%22> rdfs:label "Scuola dell'infanzia di Trento \"S. Antonio\"" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Trento%20%22Sacro%20Cuore%22> rdfs:label "Scuola dell'infanzia di Trento \"Sacro Cuore\"" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Trento%20Canossiane> rdfs:label "Scuola dell'infanzia di Trento Canossiane" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Trento%20Cognola%20%22B.%20Kofler%22> rdfs:label "Scuola dell'infanzia di Trento Cognola \"B. Kofler\"" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Trento%20La%20Clarina> rdfs:label "Scuola dell'infanzia di Trento La Clarina" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Trento%20S.%20Bartolomeo> rdfs:label "Scuola dell'infanzia di Trento S. Bartolomeo" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Trento%20San%20Don%C3%A0%20%22B.%20Kofler%22> rdfs:label "Scuola dell'infanzia di Trento San Donà \"B. Kofler\"" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Tuenno> rdfs:label "Scuola dell'infanzia di Tuenno" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Varone> rdfs:label "Scuola dell'infanzia di Varone" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Vermiglio> rdfs:label "Scuola dell'infanzia di Vermiglio" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Vezzano> rdfs:label "Scuola dell'infanzia di Vezzano" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Vigo%20Cavedine> rdfs:label "Scuola dell'infanzia di Vigo Cavedine" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Vigo%20Cortesano> rdfs:label "Scuola dell'infanzia di Vigo Cortesano" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Vigo%20Lomaso> rdfs:label "Scuola dell'infanzia di Vigo Lomaso" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Vigo%20di%20Fassa> rdfs:label "Scuola dell'infanzia di Vigo di Fassa" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Vigo%20di%20Ton> rdfs:label "Scuola dell'infanzia di Vigo di Ton" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Villa%20Lagarina> rdfs:label "Scuola dell'infanzia di Villa Lagarina" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Villamontagna> rdfs:label "Scuola dell'infanzia di Villamontagna" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Villazzano> rdfs:label "Scuola dell'infanzia di Villazzano" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Volano> rdfs:label "Scuola dell'infanzia di Volano" .
+<http://kg2026.unitn.it/resource/kindergarten/Scuola%20dell%27infanzia%20di%20Ziano%20di%20Fiemme> rdfs:label "Scuola dell'infanzia di Ziano di Fiemme" .
+<http://kg2026.unitn.it/resource/municipality/Altopiano%20della%20Vigolana> rdfs:label "Altopiano della Vigolana" .
+<http://kg2026.unitn.it/resource/municipality/Amblar-Don> rdfs:label "Amblar-Don" .
+<http://kg2026.unitn.it/resource/municipality/Baselga%20di%20Pin%C3%A8> rdfs:label "Baselga di Pinè" .
+<http://kg2026.unitn.it/resource/municipality/Bedollo> rdfs:label "Bedollo" .
+<http://kg2026.unitn.it/resource/municipality/Besenello> rdfs:label "Besenello" .
+<http://kg2026.unitn.it/resource/municipality/Bieno> rdfs:label "Bieno" .
+<http://kg2026.unitn.it/resource/municipality/Bocenago> rdfs:label "Bocenago" .
+<http://kg2026.unitn.it/resource/municipality/Borgo%20Lares> rdfs:label "Borgo Lares" .
+<http://kg2026.unitn.it/resource/municipality/Bresimo> rdfs:label "Bresimo" .
+<http://kg2026.unitn.it/resource/municipality/Brez> rdfs:label "Brez" .
+<http://kg2026.unitn.it/resource/municipality/Caderzone%20Terme> rdfs:label "Caderzone Terme" .
+<http://kg2026.unitn.it/resource/municipality/Cagn%C3%B2> rdfs:label "Cagnò" .
+<http://kg2026.unitn.it/resource/municipality/Caldes> rdfs:label "Caldes" .
+<http://kg2026.unitn.it/resource/municipality/Calliano> rdfs:label "Calliano" .
+<http://kg2026.unitn.it/resource/municipality/Canal%20San%20Bovo> rdfs:label "Canal San Bovo" .
+<http://kg2026.unitn.it/resource/municipality/Canazei> rdfs:label "Canazei" .
+<http://kg2026.unitn.it/resource/municipality/Capriana> rdfs:label "Capriana" .
+<http://kg2026.unitn.it/resource/municipality/Carano> rdfs:label "Carano" .
+<http://kg2026.unitn.it/resource/municipality/Carzano> rdfs:label "Carzano" .
+<http://kg2026.unitn.it/resource/municipality/Castel%20Condino> rdfs:label "Castel Condino" .
+<http://kg2026.unitn.it/resource/municipality/Castelfondo> rdfs:label "Castelfondo" .
+<http://kg2026.unitn.it/resource/municipality/Castello%20Tesino> rdfs:label "Castello Tesino" .
+<http://kg2026.unitn.it/resource/municipality/Cavareno> rdfs:label "Cavareno" .
+<http://kg2026.unitn.it/resource/municipality/Cavedago> rdfs:label "Cavedago" .
+<http://kg2026.unitn.it/resource/municipality/Cavizzana> rdfs:label "Cavizzana" .
+<http://kg2026.unitn.it/resource/municipality/Cimone> rdfs:label "Cimone" .
+<http://kg2026.unitn.it/resource/municipality/Cinte%20Tesino> rdfs:label "Cinte Tesino" .
+<http://kg2026.unitn.it/resource/municipality/Cis> rdfs:label "Cis" .
+<http://kg2026.unitn.it/resource/municipality/Civezzano> rdfs:label "Civezzano" .
+<http://kg2026.unitn.it/resource/municipality/Cloz> rdfs:label "Cloz" .
+<http://kg2026.unitn.it/resource/municipality/Commezzadura> rdfs:label "Commezzadura" .
+<http://kg2026.unitn.it/resource/municipality/Cont%C3%A0> rdfs:label "Contà" .
+<http://kg2026.unitn.it/resource/municipality/Croviana> rdfs:label "Croviana" .
+<http://kg2026.unitn.it/resource/municipality/Daiano> rdfs:label "Daiano" .
+<http://kg2026.unitn.it/resource/municipality/Drena> rdfs:label "Drena" .
+<http://kg2026.unitn.it/resource/municipality/Faedo> rdfs:label "Faedo" .
+<http://kg2026.unitn.it/resource/municipality/Fai%20della%20Paganella> rdfs:label "Fai della Paganella" .
+<http://kg2026.unitn.it/resource/municipality/Fierozzo> rdfs:label "Fierozzo" .
+<http://kg2026.unitn.it/resource/municipality/Folgaria> rdfs:label "Folgaria" .
+<http://kg2026.unitn.it/resource/municipality/Fondo> rdfs:label "Fondo" .
+<http://kg2026.unitn.it/resource/municipality/Frassilongo> rdfs:label "Frassilongo" .
+<http://kg2026.unitn.it/resource/municipality/Garniga%20Terme> rdfs:label "Garniga Terme" .
+<http://kg2026.unitn.it/resource/municipality/Giovo> rdfs:label "Giovo" .
+<http://kg2026.unitn.it/resource/municipality/Giustino> rdfs:label "Giustino" .
+<http://kg2026.unitn.it/resource/municipality/Imer> rdfs:label "Imer" .
+<http://kg2026.unitn.it/resource/municipality/Isera> rdfs:label "Isera" .
+<http://kg2026.unitn.it/resource/municipality/Lavarone> rdfs:label "Lavarone" .
+<http://kg2026.unitn.it/resource/municipality/Livo> rdfs:label "Livo" .
+<http://kg2026.unitn.it/resource/municipality/Luserna> rdfs:label "Luserna" .
+<http://kg2026.unitn.it/resource/municipality/Malosco> rdfs:label "Malosco" .
+<http://kg2026.unitn.it/resource/municipality/Massimeno> rdfs:label "Massimeno" .
+<http://kg2026.unitn.it/resource/municipality/Mazzin> rdfs:label "Mazzin" .
+<http://kg2026.unitn.it/resource/municipality/Mezzana> rdfs:label "Mezzana" .
+<http://kg2026.unitn.it/resource/municipality/Nave%20San%20Rocco> rdfs:label "Nave San Rocco" .
+<http://kg2026.unitn.it/resource/municipality/Nogaredo> rdfs:label "Nogaredo" .
+<http://kg2026.unitn.it/resource/municipality/Novaledo> rdfs:label "Novaledo" .
+<http://kg2026.unitn.it/resource/municipality/Ossana> rdfs:label "Ossana" .
+<http://kg2026.unitn.it/resource/municipality/Pal%C3%B9%20del%20Fersina> rdfs:label "Palù del Fersina" .
+<http://kg2026.unitn.it/resource/municipality/Peio> rdfs:label "Peio" .
+<http://kg2026.unitn.it/resource/municipality/Pellizzano> rdfs:label "Pellizzano" .
+<http://kg2026.unitn.it/resource/municipality/Pelugo> rdfs:label "Pelugo" .
+<http://kg2026.unitn.it/resource/municipality/Pomarolo> rdfs:label "Pomarolo" .
+<http://kg2026.unitn.it/resource/municipality/Porte%20di%20Rendena> rdfs:label "Porte di Rendena" .
+<http://kg2026.unitn.it/resource/municipality/Rabbi> rdfs:label "Rabbi" .
+<http://kg2026.unitn.it/resource/municipality/Rev%C3%B2> rdfs:label "Revò" .
+<http://kg2026.unitn.it/resource/municipality/Romallo> rdfs:label "Romallo" .
+<http://kg2026.unitn.it/resource/municipality/Romeno> rdfs:label "Romeno" .
+<http://kg2026.unitn.it/resource/municipality/Ronzone> rdfs:label "Ronzone" .
+<http://kg2026.unitn.it/resource/municipality/Rover%C3%A8%20della%20Luna> rdfs:label "Roverè della Luna" .
+<http://kg2026.unitn.it/resource/municipality/Ruffr%C3%A8-Mendola> rdfs:label "Ruffrè-Mendola" .
+<http://kg2026.unitn.it/resource/municipality/Rumo> rdfs:label "Rumo" .
+<http://kg2026.unitn.it/resource/municipality/Sagron%20Mis> rdfs:label "Sagron Mis" .
+<http://kg2026.unitn.it/resource/municipality/Samone> rdfs:label "Samone" .
+<http://kg2026.unitn.it/resource/municipality/Sant%27Orsola%20Terme> rdfs:label "Sant'Orsola Terme" .
+<http://kg2026.unitn.it/resource/municipality/Sarnonico> rdfs:label "Sarnonico" .
+<http://kg2026.unitn.it/resource/municipality/Sfruz> rdfs:label "Sfruz" .
+<http://kg2026.unitn.it/resource/municipality/Soraga%20di%20Fassa> rdfs:label "Soraga di Fassa" .
+<http://kg2026.unitn.it/resource/municipality/Sporminore> rdfs:label "Sporminore" .
+<http://kg2026.unitn.it/resource/municipality/Strembo> rdfs:label "Strembo" .
+<http://kg2026.unitn.it/resource/municipality/Telve%20di%20Sopra> rdfs:label "Telve di Sopra" .
+<http://kg2026.unitn.it/resource/municipality/Tenna> rdfs:label "Tenna" .
+<http://kg2026.unitn.it/resource/municipality/Terragnolo> rdfs:label "Terragnolo" .
+<http://kg2026.unitn.it/resource/municipality/Terzolas> rdfs:label "Terzolas" .
+<http://kg2026.unitn.it/resource/municipality/Valfloriana> rdfs:label "Valfloriana" .
+<http://kg2026.unitn.it/resource/municipality/Vallarsa> rdfs:label "Vallarsa" .
+<http://kg2026.unitn.it/resource/municipality/Varena> rdfs:label "Varena" .
+<http://kg2026.unitn.it/resource/municipality/Vignola-Falesina> rdfs:label "Vignola-Falesina" .
+<http://kg2026.unitn.it/resource/municipality/Zambana> rdfs:label "Zambana" .
+<http://kg2026.unitn.it/resource/university/Universit%C3%A0%20degli%20studi%20di%20Trento> rdfs:label "Università degli studi di Trento" .
+<http://kg2026.unitn.it/resource/municipality/Albiano> rdfs:label "Albiano" .
+<http://kg2026.unitn.it/resource/municipality/Aldeno> rdfs:label "Aldeno" .
+<http://kg2026.unitn.it/resource/municipality/Altavalle> rdfs:label "Altavalle" .
+<http://kg2026.unitn.it/resource/municipality/Andalo> rdfs:label "Andalo" .
+<http://kg2026.unitn.it/resource/municipality/Bleggio%20Superiore> rdfs:label "Bleggio Superiore" .
+<http://kg2026.unitn.it/resource/municipality/Bondone> rdfs:label "Bondone" .
+<http://kg2026.unitn.it/resource/municipality/Borgo%20Chiese> rdfs:label "Borgo Chiese" .
+<http://kg2026.unitn.it/resource/municipality/Borgo%20Valsugana> rdfs:label "Borgo Valsugana" .
+<http://kg2026.unitn.it/resource/municipality/Calceranica%20al%20Lago> rdfs:label "Calceranica al Lago" .
+<http://kg2026.unitn.it/resource/municipality/Caldonazzo> rdfs:label "Caldonazzo" .
+<http://kg2026.unitn.it/resource/municipality/Campitello%20di%20Fassa> rdfs:label "Campitello di Fassa" .
+<http://kg2026.unitn.it/resource/municipality/Campodenno> rdfs:label "Campodenno" .
+<http://kg2026.unitn.it/resource/municipality/Carisolo> rdfs:label "Carisolo" .
+<http://kg2026.unitn.it/resource/municipality/Castel%20Ivano> rdfs:label "Castel Ivano" .
+<http://kg2026.unitn.it/resource/municipality/Castello-Molina%20di%20Fiemme> rdfs:label "Castello-Molina di Fiemme" .
+<http://kg2026.unitn.it/resource/municipality/Castelnuovo> rdfs:label "Castelnuovo" .
+<http://kg2026.unitn.it/resource/municipality/Cembra%20Lisignago> rdfs:label "Cembra Lisignago" .
+<http://kg2026.unitn.it/resource/municipality/Dambel> rdfs:label "Dambel" .
+<http://kg2026.unitn.it/resource/municipality/Denno> rdfs:label "Denno" .
+<http://kg2026.unitn.it/resource/municipality/Dimaro%20Folgarida> rdfs:label "Dimaro Folgarida" .
+<http://kg2026.unitn.it/resource/municipality/Dro> rdfs:label "Dro" .
+<http://kg2026.unitn.it/resource/municipality/Fiav%C3%A8> rdfs:label "Fiavè" .
+<http://kg2026.unitn.it/resource/municipality/Fornace> rdfs:label "Fornace" .
+<http://kg2026.unitn.it/resource/municipality/Ledro> rdfs:label "Ledro" .
+<http://kg2026.unitn.it/resource/municipality/Levico%20Terme> rdfs:label "Levico Terme" .
+<http://kg2026.unitn.it/resource/municipality/Lona-Lases> rdfs:label "Lona-Lases" .
+<http://kg2026.unitn.it/resource/municipality/Madruzzo> rdfs:label "Madruzzo" .
+<http://kg2026.unitn.it/resource/municipality/Mal%C3%A8> rdfs:label "Malè" .
+<http://kg2026.unitn.it/resource/municipality/Mezzano> rdfs:label "Mezzano" .
+<http://kg2026.unitn.it/resource/municipality/Mezzocorona> rdfs:label "Mezzocorona" .
+<http://kg2026.unitn.it/resource/municipality/Mezzolombardo> rdfs:label "Mezzolombardo" .
+<http://kg2026.unitn.it/resource/municipality/Moena> rdfs:label "Moena" .
+<http://kg2026.unitn.it/resource/municipality/Molveno> rdfs:label "Molveno" .
+<http://kg2026.unitn.it/resource/municipality/Mori> rdfs:label "Mori" .
+<http://kg2026.unitn.it/resource/municipality/Nomi> rdfs:label "Nomi" .
+<http://kg2026.unitn.it/resource/municipality/Ospedaletto> rdfs:label "Ospedaletto" .
+<http://kg2026.unitn.it/resource/municipality/Panchi%C3%A0> rdfs:label "Panchià" .
+<http://kg2026.unitn.it/resource/municipality/Pieve%20Tesino> rdfs:label "Pieve Tesino" .
+<http://kg2026.unitn.it/resource/municipality/Pieve%20di%20Bono-Prezzo> rdfs:label "Pieve di Bono-Prezzo" .
+<http://kg2026.unitn.it/resource/municipality/Pinzolo> rdfs:label "Pinzolo" .
+<http://kg2026.unitn.it/resource/municipality/Predazzo> rdfs:label "Predazzo" .
+<http://kg2026.unitn.it/resource/municipality/Ronchi%20Valsugana> rdfs:label "Ronchi Valsugana" .
+<http://kg2026.unitn.it/resource/municipality/Ronzo-Chienis> rdfs:label "Ronzo-Chienis" .
+<http://kg2026.unitn.it/resource/municipality/San%20Giovanni%20di%20Fassa> rdfs:label "San Giovanni di Fassa" .
+<http://kg2026.unitn.it/resource/municipality/San%20Lorenzo%20Dorsino> rdfs:label "San Lorenzo Dorsino" .
+<http://kg2026.unitn.it/resource/municipality/San%20Michele%20all%27Adige> rdfs:label "San Michele all'Adige" .
+<http://kg2026.unitn.it/resource/municipality/Sanzeno> rdfs:label "Sanzeno" .
+<http://kg2026.unitn.it/resource/municipality/Scurelle> rdfs:label "Scurelle" .
+<http://kg2026.unitn.it/resource/municipality/Segonzano> rdfs:label "Segonzano" .
+<http://kg2026.unitn.it/resource/municipality/Sover> rdfs:label "Sover" .
+<http://kg2026.unitn.it/resource/municipality/Spiazzo> rdfs:label "Spiazzo" .
+<http://kg2026.unitn.it/resource/municipality/Spormaggiore> rdfs:label "Spormaggiore" .
+<http://kg2026.unitn.it/resource/municipality/Stenico> rdfs:label "Stenico" .
+<http://kg2026.unitn.it/resource/municipality/Tenno> rdfs:label "Tenno" .
+<http://kg2026.unitn.it/resource/municipality/Ton> rdfs:label "Ton" .
+<http://kg2026.unitn.it/resource/municipality/Torcegno> rdfs:label "Torcegno" .
+<http://kg2026.unitn.it/resource/municipality/Trambileno> rdfs:label "Trambileno" .
+<http://kg2026.unitn.it/resource/municipality/Tre%20Ville> rdfs:label "Tre Ville" .
+<http://kg2026.unitn.it/resource/municipality/Valdaone> rdfs:label "Valdaone" .
+<http://kg2026.unitn.it/resource/municipality/Vermiglio> rdfs:label "Vermiglio" .
+<http://kg2026.unitn.it/resource/municipality/Ville%20d%27Anaunia> rdfs:label "Ville d'Anaunia" .
+<http://kg2026.unitn.it/resource/municipality/Volano> rdfs:label "Volano" .
+<http://kg2026.unitn.it/resource/municipality/Ziano%20di%20Fiemme> rdfs:label "Ziano di Fiemme" .
+<http://kg2026.unitn.it/resource/municipality/Avio> rdfs:label "Avio" .
+<http://kg2026.unitn.it/resource/municipality/Brentonico> rdfs:label "Brentonico" .
+<http://kg2026.unitn.it/resource/municipality/Cavalese> rdfs:label "Cavalese" .
+<http://kg2026.unitn.it/resource/municipality/Cavedine> rdfs:label "Cavedine" .
+<http://kg2026.unitn.it/resource/municipality/Cles> rdfs:label "Cles" .
+<http://kg2026.unitn.it/resource/municipality/Grigno> rdfs:label "Grigno" .
+<http://kg2026.unitn.it/resource/municipality/Lavis> rdfs:label "Lavis" .
+<http://kg2026.unitn.it/resource/municipality/Nago-Torbole> rdfs:label "Nago-Torbole" .
+<http://kg2026.unitn.it/resource/municipality/Sella%20Giudicarie> rdfs:label "Sella Giudicarie" .
+<http://kg2026.unitn.it/resource/municipality/Telve> rdfs:label "Telve" .
+<http://kg2026.unitn.it/resource/municipality/Tesero> rdfs:label "Tesero" .
+<http://kg2026.unitn.it/resource/municipality/Arco> rdfs:label "Arco" .
+<http://kg2026.unitn.it/resource/municipality/Comano%20Terme> rdfs:label "Comano Terme" .
+<http://kg2026.unitn.it/resource/municipality/Roncegno%20Terme> rdfs:label "Roncegno Terme" .
+<http://kg2026.unitn.it/resource/municipality/Storo> rdfs:label "Storo" .
+<http://kg2026.unitn.it/resource/municipality/Tione%20di%20Trento> rdfs:label "Tione di Trento" .
+<http://kg2026.unitn.it/resource/municipality/Vallelaghi> rdfs:label "Vallelaghi" .
+<http://kg2026.unitn.it/resource/municipality/Villa%20Lagarina> rdfs:label "Villa Lagarina" .
+<http://kg2026.unitn.it/resource/municipality/Ala> rdfs:label "Ala" .
+<http://kg2026.unitn.it/resource/municipality/Pergine%20Valsugana> rdfs:label "Pergine Valsugana" .
+<http://kg2026.unitn.it/resource/municipality/Predaia> rdfs:label "Predaia" .
+<http://kg2026.unitn.it/resource/municipality/Primiero%20San%20Martino%20di%20Castrozza> rdfs:label "Primiero San Martino di Castrozza" .
+<http://kg2026.unitn.it/resource/municipality/Riva%20del%20Garda> rdfs:label "Riva del Garda" .
+<http://kg2026.unitn.it/resource/municipality/Rovereto> rdfs:label "Rovereto" .
+<http://kg2026.unitn.it/resource/municipality/Trento> rdfs:label "Trento" .

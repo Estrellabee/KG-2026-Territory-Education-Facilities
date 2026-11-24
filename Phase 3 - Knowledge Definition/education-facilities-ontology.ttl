@@ -1,39 +1,29 @@
-@prefix owl:   <http://www.w3.org/2002/07/owl#> .
-@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
-@prefix edu:    <http://knowdive.disi.unitn.it/etype#> .
+@prefix edu: <http://knowdive.disi.unitn.it/etype#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix schema: <https://schema.org/> .
-@prefix vivo:  <http://vivoweb.org/ontology/core#> .
-
-#################################################################
-# Ontology
-#################################################################
+@prefix vivo: <http://vivoweb.org/ontology/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 edu: a owl:Ontology ;
     rdfs:label "Territory and Education Facilities Ontology" ;
     rdfs:comment "KG 2026 project #6: educational institutions and municipalities in the Trentino area." .
 
-#################################################################
-# Classes
-#################################################################
-
-edu:Municipality a owl:Class ;
-    rdfs:label "Municipality" ;
-    rdfs:subClassOf schema:AdministrativeArea ;
-    rdfs:comment "an urban district having corporate status and powers of self-government [UKC-45537]" ;
-    rdfs:seeAlso vivo:GeographicLocation .
-
-edu:EducationalInstitution a owl:Class ;
-    rdfs:label "Educational Institution" ;
-    rdfs:subClassOf schema:EducationalOrganization ;
-    rdfs:comment "an institution dedicated to education [UKC-43985]" ;
-    rdfs:seeAlso vivo:Organization .
+edu:HigherEducationInstitution a owl:Class ;
+    rdfs:label "Higher Education Institution" ;
+    rdfs:comment "a high school comprising many faculties, where specialists are trained [UKC-24619]" ;
+    rdfs:subClassOf edu:EducationalInstitution,
+        schema:CollegeOrUniversity .
 
 edu:Kindergarten a owl:Class ;
     rdfs:label "Kindergarten" ;
     rdfs:comment "a preschool for children age 4 to 6 to prepare them for primary school [UKC-44658]" ;
     rdfs:subClassOf edu:EducationalInstitution .
+
+edu:NaturalLandmark a owl:Class ;
+    rdfs:label "Natural Landmark" ;
+    rdfs:comment "no UKC equivalent: UKC has no natural-landmark concept, kept as a custom project term" ;
+    rdfs:subClassOf edu:GeoFeature .
 
 edu:PrimarySchool a owl:Class ;
     rdfs:label "Primary School" ;
@@ -45,108 +35,100 @@ edu:SecondarySchool a owl:Class ;
     rdfs:comment "a school for students intermediate between primary school and tertiary school [UKC-44031]" ;
     rdfs:subClassOf edu:EducationalInstitution .
 
-edu:HigherEducationInstitution a owl:Class ;
-    rdfs:label "Higher Education Institution" ;
-    rdfs:comment "a high school comprising many faculties, where specialists are trained [UKC-24619]" ;
-    rdfs:subClassOf edu:EducationalInstitution , schema:CollegeOrUniversity .
-
-edu:GeoFeature a owl:Class ;
-    rdfs:comment "a demarcated area of the Earth [UKC-45324]" ;
-    rdfs:label "Geographic Feature" .
-
-edu:NaturalLandmark a owl:Class ;
-    rdfs:label "Natural Landmark" ;
-    rdfs:comment "no UKC equivalent: UKC has no natural-landmark concept, kept as a custom project term" ;
-    rdfs:subClassOf edu:GeoFeature .
-
-#################################################################
-# Object properties
-#################################################################
-
-edu:has_municipality a owl:ObjectProperty ;
-    rdfs:label "located in" ;
-    rdfs:domain edu:EducationalInstitution ;
-    rdfs:comment "aligned to schema:containedInPlace; UKC provides no relation for it" ;
-    rdfs:range edu:Municipality .
-
-edu:has_proximity a owl:ObjectProperty ;
-    rdfs:label "near" ;
-    rdfs:domain edu:EducationalInstitution ;
-    rdfs:range edu:GeoFeature ;
-    rdfs:comment "Conceptual relation only; no landmark or coordinate data is available in the current sources. custom relation; no UKC or KTLO equivalent, left unpopulated" .
-
 edu:hasEducationalInstitution a owl:ObjectProperty ;
     rdfs:label "has educational institution" ;
+    rdfs:comment "declared as the inverse of edu:has_municipality; UKC models concepts and not relations, so no identifier is attached and the term stays a project extension (tier 3)" ;
     rdfs:domain edu:Municipality ;
     rdfs:range edu:EducationalInstitution ;
-    rdfs:comment "declared as the inverse of edu:has_municipality; UKC models concepts and not relations, so no identifier is attached and the term stays a project extension (tier 3)" ;
     owl:inverseOf edu:has_municipality .
-
-#################################################################
-# Data properties
-#################################################################
-
-edu:has_name a owl:DatatypeProperty ;
-    rdfs:label "name" ;
-    rdfs:domain edu:EducationalInstitution , edu:Municipality , edu:GeoFeature ;
-    rdfs:comment "a word by which a person or thing is known [UKC-2]" ;
-    rdfs:range xsd:string .
 
 edu:has_address a owl:DatatypeProperty ;
     rdfs:label "address" ;
-    rdfs:domain edu:EducationalInstitution ;
     rdfs:comment "the address where a person or organization can be communicated with [UKC-45005]" ;
+    rdfs:domain edu:EducationalInstitution ;
+    rdfs:range xsd:string .
+
+edu:has_area a owl:DatatypeProperty ;
+    rdfs:label "surface area" ;
+    rdfs:comment "Surface area of the municipality. the extent of a 2-dimensional surface enclosed within a boundary [UKC-27784]" ;
+    rdfs:domain edu:Municipality ;
+    rdfs:range xsd:decimal .
+
+edu:has_istatCode a owl:DatatypeProperty ;
+    rdfs:label "ISTAT code" ;
+    rdfs:comment "a system of symbols used to represent information [UKC-33626]" ;
+    rdfs:domain edu:Municipality ;
+    rdfs:range xsd:string .
+
+edu:has_kindergartenCount a owl:DatatypeProperty ;
+    rdfs:label "kindergarten count" ;
+    rdfs:comment "Number of kindergartens (scuole dell'infanzia) in the municipality, school year 2012/2013. the act of determining the quantity of something [UKC-3211]" ;
+    rdfs:domain edu:Municipality ;
+    rdfs:range xsd:integer .
+
+edu:has_lowerSecondarySchoolCount a owl:DatatypeProperty ;
+    rdfs:label "lower secondary school count" ;
+    rdfs:comment "Number of lower secondary schools (scuole secondarie di primo grado) in the municipality, school year 2012/2013. the act of determining the quantity of something [UKC-3211]" ;
+    rdfs:domain edu:Municipality ;
+    rdfs:range xsd:integer .
+
+edu:has_name a owl:DatatypeProperty ;
+    rdfs:label "name" ;
+    rdfs:comment "a word by which a person or thing is known [UKC-2]" ;
+    rdfs:domain edu:EducationalInstitution,
+        edu:GeoFeature,
+        edu:Municipality ;
     rdfs:range xsd:string .
 
 edu:has_ownershipType a owl:DatatypeProperty ;
     rdfs:label "ownership type" ;
+    rdfs:comment "Enumerated values: public, religious, lay (source values Pubblico / Religioso / Laico). the state of being an owner of something [UKC-62515]" ;
     rdfs:domain edu:EducationalInstitution ;
-    rdfs:range xsd:string ;
-    rdfs:comment "Enumerated values: public, religious, lay (source values Pubblico / Religioso / Laico). the state of being an owner of something [UKC-62515]" .
-
-edu:has_schoolLevel a owl:DatatypeProperty ;
-    rdfs:label "school level" ;
-    rdfs:domain edu:EducationalInstitution ;
-    rdfs:range xsd:string ;
-    rdfs:comment "Enumerated values: kindergarten, primary, secondary, higher. a relative position in a scale or hierarchy [UKC-19654]" .
-
-edu:has_istatCode a owl:DatatypeProperty ;
-    rdfs:label "ISTAT code" ;
-    rdfs:domain edu:Municipality ;
-    rdfs:comment "a system of symbols used to represent information [UKC-33626]" ;
     rdfs:range xsd:string .
-
-edu:has_area a owl:DatatypeProperty ;
-    rdfs:label "area" ;
-    rdfs:domain edu:Municipality ;
-    rdfs:range xsd:decimal ;
-    rdfs:comment "Surface area of the municipality. the extent of a 2-dimensional surface enclosed within a boundary [UKC-27784]" .
-
-#################################################################
-# Data properties: counts of schools per municipality
-# Source: number_scuole_*.csv (school year 2012/2013).
-#################################################################
-
-edu:has_kindergartenCount a owl:DatatypeProperty ;
-    rdfs:label "kindergarten count" ;
-    rdfs:domain edu:Municipality ;
-    rdfs:range xsd:integer ;
-    rdfs:comment "Number of kindergartens (scuole dell'infanzia) in the municipality, school year 2012/2013. the act of determining the quantity of something [UKC-3211]" .
 
 edu:has_primarySchoolCount a owl:DatatypeProperty ;
     rdfs:label "primary school count" ;
+    rdfs:comment "Number of primary schools (scuole primarie) in the municipality, school year 2012/2013. the act of determining the quantity of something [UKC-3211]" ;
     rdfs:domain edu:Municipality ;
-    rdfs:range xsd:integer ;
-    rdfs:comment "Number of primary schools (scuole primarie) in the municipality, school year 2012/2013. the act of determining the quantity of something [UKC-3211]" .
+    rdfs:range xsd:integer .
 
-edu:has_lowerSecondarySchoolCount a owl:DatatypeProperty ;
-    rdfs:label "lower secondary school count" ;
-    rdfs:domain edu:Municipality ;
-    rdfs:range xsd:integer ;
-    rdfs:comment "Number of lower secondary schools (scuole secondarie di primo grado) in the municipality, school year 2012/2013. the act of determining the quantity of something [UKC-3211]" .
+edu:has_proximity a owl:ObjectProperty ;
+    rdfs:label "close to geographic feature" ;
+    rdfs:comment "Conceptual relation only; no landmark or coordinate data is available in the current sources. custom relation; no UKC or KTLO equivalent, left unpopulated" ;
+    rdfs:domain edu:EducationalInstitution ;
+    rdfs:range edu:GeoFeature .
+
+edu:has_schoolLevel a owl:DatatypeProperty ;
+    rdfs:label "school level" ;
+    rdfs:comment "Enumerated values: kindergarten, primary, secondary, higher. a relative position in a scale or hierarchy [UKC-19654]" ;
+    rdfs:domain edu:EducationalInstitution ;
+    rdfs:range xsd:string .
 
 edu:has_upperSecondarySchoolCount a owl:DatatypeProperty ;
     rdfs:label "upper secondary school count" ;
+    rdfs:comment "Number of upper secondary schools (scuole secondarie di secondo grado) in the municipality, school year 2012/2013. the act of determining the quantity of something [UKC-3211]" ;
     rdfs:domain edu:Municipality ;
-    rdfs:range xsd:integer ;
-    rdfs:comment "Number of upper secondary schools (scuole secondarie di secondo grado) in the municipality, school year 2012/2013. the act of determining the quantity of something [UKC-3211]" .
+    rdfs:range xsd:integer .
+
+edu:has_municipality a owl:ObjectProperty ;
+    rdfs:label "located in municipality" ;
+    rdfs:comment "aligned to schema:containedInPlace; UKC provides no relation for it" ;
+    rdfs:domain edu:EducationalInstitution ;
+    rdfs:range edu:Municipality .
+
+edu:GeoFeature a owl:Class ;
+    rdfs:label "Geographic Feature" ;
+    rdfs:comment "a demarcated area of the Earth [UKC-45324]" .
+
+edu:Municipality a owl:Class ;
+    rdfs:label "Municipality" ;
+    rdfs:comment "an urban district having corporate status and powers of self-government [UKC-45537]" ;
+    rdfs:seeAlso vivo:GeographicLocation ;
+    rdfs:subClassOf schema:AdministrativeArea .
+
+edu:EducationalInstitution a owl:Class ;
+    rdfs:label "Educational Institution" ;
+    rdfs:comment "an institution dedicated to education [UKC-43985]" ;
+    rdfs:seeAlso vivo:Organization ;
+    rdfs:subClassOf schema:EducationalOrganization .
+

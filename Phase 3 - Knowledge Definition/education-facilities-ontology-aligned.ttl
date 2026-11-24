@@ -67,7 +67,7 @@ edu:has_address a owl:DatatypeProperty ;
     rdfs:range xsd:string .
 
 edu:has_area a owl:DatatypeProperty ;
-    rdfs:label "area" ;
+    rdfs:label "surface area" ;
     rdfs:comment "Surface area of the municipality. the extent of a 2-dimensional surface enclosed within a boundary [UKC-27784]. Surface area of the municipality. the extent of a 2-dimensional surface enclosed within a boundary [UKC-27784]. Project extension (surface area in km2). schema:area exists in the supplied fragment but is declared as an object property, so no sub-property axiom is added." ;
     rdfs:domain edu:Municipality ;
     rdfs:range xsd:decimal .
@@ -113,7 +113,7 @@ edu:has_primarySchoolCount a owl:DatatypeProperty ;
     rdfs:range xsd:integer .
 
 edu:has_proximity a owl:ObjectProperty ;
-    rdfs:label "near" ;
+    rdfs:label "close to geographic feature" ;
     rdfs:comment "Conceptual relation only; no landmark or coordinate data is available in the current sources. custom relation; no UKC or KTLO equivalent, left unpopulated. Conceptual relation only; no landmark or coordinate data is available in the current sources. custom relation; no UKC or KTLO equivalent, left unpopulated. Conceptual relation only; no landmark or coordinate data is available in the current sources. No equivalent exists in KTLO, LTLO or schema.org fragments, therefore it is declared as a project extension." ;
     rdfs:domain edu:EducationalInstitution ;
     rdfs:range edu:GeoFeature .
@@ -131,7 +131,7 @@ edu:has_upperSecondarySchoolCount a owl:DatatypeProperty ;
     rdfs:range xsd:integer .
 
 edu:has_municipality a owl:ObjectProperty ;
-    rdfs:label "located in" ;
+    rdfs:label "located in municipality" ;
     rdfs:comment "aligned to schema:containedInPlace; UKC provides no relation for it. aligned to schema:containedInPlace; UKC provides no relation for it. Project extension, aligned to schema:containedInPlace. The KTLO has no containment relation: it is a taxonomy of place types, so this relation cannot be inherited from it." ;
     rdfs:domain edu:EducationalInstitution ;
     rdfs:range edu:Municipality ;

@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:owl="http://www.w3.org/2002/07/owl#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+>
+  <rdf:Description rdf:about="http://knowdive.disi.unitn.it/etype#has_schoolLevel">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label>school level</rdfs:label>
+    <rdfs:comment>Enumerated values: kindergarten, primary, secondary, higher. a relative position in a scale or hierarchy [UKC-19654]</rdfs:comment>
+    <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#EducationalInstitution"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://knowdive.disi.unitn.it/etype#has_area">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label>surface area</rdfs:label>
+    <rdfs:comment>Surface area of the municipality. the extent of a 2-dimensional surface enclosed within a boundary [UKC-27784]</rdfs:comment>
+    <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#Municipality"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://knowdive.disi.unitn.it/etype#has_name">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label>name</rdfs:label>
+    <rdfs:comment>a word by which a person or thing is known [UKC-2]</rdfs:comment>
+    <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#EducationalInstitution"/>
+    <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#GeoFeature"/>
+    <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#Municipality"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://knowdive.disi.unitn.it/etype#has_proximity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label>close to geographic feature</rdfs:label>
+    <rdfs:comment>Conceptual relation only; no landmark or coordinate data is available in the current sources. custom relation; no UKC or KTLO equivalent, left unpopulated</rdfs:comment>
+    <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#EducationalInstitution"/>
+    <rdfs:range rdf:resource="http://knowdive.disi.unitn.it/etype#GeoFeature"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://knowdive.disi.unitn.it/etype#PrimarySchool">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Primary School</rdfs:label>
+    <rdfs:comment>a school for children where they receive the first stage of basic education [UKC-44664]</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://knowdive.disi.unitn.it/etype#EducationalInstitution"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://knowdive.disi.unitn.it/etype#has_municipality">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label>located in municipality</rdfs:label>
+    <rdfs:comment>aligned to schema:containedInPlace; UKC provides no relation for it</rdfs:comment>
+    <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#EducationalInstitution"/>
+    <rdfs:range rdf:resource="http://knowdive.disi.unitn.it/etype#Municipality"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://knowdive.disi.unitn.it/etype#hasEducationalInstitution">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label>has educational institution</rdfs:label>
+    <rdfs:comment>declared as the inverse of edu:has_municipality; UKC models concepts and not relations, so no identifier is attached and the term stays a project extension (tier 3)</rdfs:comment>
+    <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#Municipality"/>
+    <rdfs:range rdf:resource="http://knowdive.disi.unitn.it/etype#EducationalInstitution"/>
+    <owl:inverseOf rdf:resource="http://knowdive.disi.unitn.it/etype#has_municipality"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://knowdive.disi.unitn.it/etype#Kindergarten">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Kindergarten</rdfs:label>
+    <rdfs:comment>a preschool for children age 4 to 6 to prepare them for primary school [UKC-44658]</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://knowdive.disi.unitn.it/etype#EducationalInstitution"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://knowdive.disi.unitn.it/etype#has_address">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label>address</rdfs:label>
+    <rdfs:comment>the address where a person or organization can be communicated with [UKC-45005]</rdfs:comment>
+    <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#EducationalInstitution"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://knowdive.disi.unitn.it/etype#has_primarySchoolCount">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label>primary school count</rdfs:label>
+    <rdfs:comment>Number of primary schools (scuole primarie) in the municipality, school year 2012/2013. the act of determining the quantity of something [UKC-3211]</rdfs:comment>
+    <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#Municipality"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://knowdive.disi.unitn.it/etype#EducationalInstitution">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Educational Institution</rdfs:label>
+    <rdfs:comment>an institution dedicated to education [UKC-43985]</rdfs:comment>
+    <rdfs:seeAlso rdf:resource="http://vivoweb.org/ontology/core#Organization"/>
+    <rdfs:subClassOf rdf:resource="https://schema.org/EducationalOrganization"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://knowdive.disi.unitn.it/etype#">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+    <rdfs:label>Territory and Education Facilities Ontology</rdfs:label>
+    <rdfs:comment>KG 2026 project #6: educational institutions and municipalities in the Trentino area.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://knowdive.disi.unitn.it/etype#has_upperSecondarySchoolCount">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label>upper secondary school count</rdfs:label>
+    <rdfs:comment>Number of upper secondary schools (scuole secondarie di secondo grado) in the municipality, school year 2012/2013. the act of determining the quantity of something [UKC-3211]</rdfs:comment>
+    <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#Municipality"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://knowdive.disi.unitn.it/etype#has_lowerSecondarySchoolCount">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label>lower secondary school count</rdfs:label>
+    <rdfs:comment>Number of lower secondary schools (scuole secondarie di primo grado) in the municipality, school year 2012/2013. the act of determining the quantity of something [UKC-3211]</rdfs:comment>
+    <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#Municipality"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://knowdive.disi.unitn.it/etype#has_istatCode">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label>ISTAT code</rdfs:label>
+    <rdfs:comment>a system of symbols used to represent information [UKC-33626]</rdfs:comment>
+    <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#Municipality"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://knowdive.disi.unitn.it/etype#Municipality">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Municipality</rdfs:label>
+    <rdfs:comment>an urban district having corporate status and powers of self-government [UKC-45537]</rdfs:comment>
+    <rdfs:seeAlso rdf:resource="http://vivoweb.org/ontology/core#GeographicLocation"/>
+    <rdfs:subClassOf rdf:resource="https://schema.org/AdministrativeArea"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://knowdive.disi.unitn.it/etype#HigherEducationInstitution">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Higher Education Institution</rdfs:label>
+    <rdfs:comment>a high school comprising many faculties, where specialists are trained [UKC-24619]</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://knowdive.disi.unitn.it/etype#EducationalInstitution"/>
+    <rdfs:subClassOf rdf:resource="https://schema.org/CollegeOrUniversity"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://knowdive.disi.unitn.it/etype#has_kindergartenCount">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label>kindergarten count</rdfs:label>
+    <rdfs:comment>Number of kindergartens (scuole dell'infanzia) in the municipality, school year 2012/2013. the act of determining the quantity of something [UKC-3211]</rdfs:comment>
+    <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#Municipality"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://knowdive.disi.unitn.it/etype#has_ownershipType">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label>ownership type</rdfs:label>
+    <rdfs:comment>Enumerated values: public, religious, lay (source values Pubblico / Religioso / Laico). the state of being an owner of something [UKC-62515]</rdfs:comment>
+    <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#EducationalInstitution"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://knowdive.disi.unitn.it/etype#NaturalLandmark">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Natural Landmark</rdfs:label>
+    <rdfs:comment>no UKC equivalent: UKC has no natural-landmark concept, kept as a custom project term</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://knowdive.disi.unitn.it/etype#GeoFeature"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://knowdive.disi.unitn.it/etype#SecondarySchool">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Secondary School</rdfs:label>
+    <rdfs:comment>a school for students intermediate between primary school and tertiary school [UKC-44031]</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://knowdive.disi.unitn.it/etype#EducationalInstitution"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://knowdive.disi.unitn.it/etype#GeoFeature">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Geographic Feature</rdfs:label>
+    <rdfs:comment>a demarcated area of the Earth [UKC-45324]</rdfs:comment>
+  </rdf:Description>
+</rdf:RDF>
