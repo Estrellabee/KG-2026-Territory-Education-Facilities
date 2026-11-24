@@ -35,4 +35,4 @@ The instance graph contains 2,347 triples: 176 municipalities, 47 educational in
 OpenRefine 3.10.0 for data cleaning, Karma 2.5.8 for the mapping experiments, Python 3.13 with `rdflib` 7.6.0 for graph generation, validation and query execution. The SPARQL queries answering the competency questions are documented in `Evaluation`.
 
 ## Author
-Estrellabee — KG 2026, University of Trento.
+HaoqiangZhou — KG 2026, University of Trento.
